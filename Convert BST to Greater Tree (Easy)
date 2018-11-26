@@ -1,0 +1,29 @@
+Input: The root of a Binary Search Tree like this:
+
+              5
+            /   \
+           2     13
+
+Output: The root of a Greater Tree like this:
+
+             18
+            /   \
+          20     13
+          
+解题思路：先遍历右子树
+
+private int sum;
+public TreeNode convertBST(TreeNode root)
+{
+    traverse(root);
+    return root;
+}
+public void traverse(TreeNode root)
+{
+    if(root==null)
+      return root;
+    traverse(root.right);
+    sum+=root.val;
+    root.val = sum;
+    traverse(root.left);
+}
