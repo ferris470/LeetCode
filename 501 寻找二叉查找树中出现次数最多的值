@@ -1,0 +1,40 @@
+501. Find Mode in Binary Search Tree(Easy)
+For example:
+Given BST [1,null,2,2],
+   1
+    \
+     2
+    /
+   2
+ 
+return [2].
+
+解题思路：利用中序遍历把树的节点值转化为升序数组，然后统计次数
+public int[] findMode(TreeNode root) {
+        List<Integer> nums = new ArrayList<Integer>();
+        dfs(root,nums);
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int num:nums)
+            map.put(num,map.getOrDefault(num,0)+1);
+        int max = Integer.MIN_VALUE;
+        for(int count:map.values())
+            max = Math.max(max,count);
+        List<Integer> list = new ArrayList<Integer>();
+        for(int key:map.keySet())
+        {
+            if(map.get(key)==max)
+                list.add(key);
+        }
+        int[] ans = new int[list.size()];
+        for(int i = 0;i<ans.length;i++)
+            ans[i] = list.get(i);
+        return ans;
+    }
+    public void dfs(TreeNode root,List<Integer> nums)
+    {
+        if(root==null)
+            return;
+        dfs(root.left,nums);
+        nums.add(root.val);
+        dfs(root.right,nums);
+    }
