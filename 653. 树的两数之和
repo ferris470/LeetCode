@@ -1,0 +1,75 @@
+653. Two Sum IV - Input is a BST (Easy)
+Example 1:
+Input: 
+    5
+   / \
+  3   6
+ / \   \
+2   4   7
+
+Target = 9
+Output: True
+
+解题思路1：遍历左右子树，以每个节点为两数之中的一个，在其他节点中寻找另一个
+public boolean findTarget(TreeNode root, int k) {
+        if(root==null)
+            return false;
+        return findOne(root,root,k);
+    }
+    public boolean findOne(TreeNode root,TreeNode one,int k)
+    {
+        if(one==null)
+            return false;
+        int dif = k-one.val;
+        boolean flag = search(root.left,dif,one)||search(root.right,dif,one);
+        if(!flag)
+            return findOne(root,one.left,k)||findOne(root,one.right,k);
+        return flag;
+    }
+    public boolean search(TreeNode root,int dif,TreeNode one)
+    {
+        if(root==null)
+            return false;
+        if(root.val==dif&&root.val!=one.val)
+            return true;
+        if(dif>root.val)
+            return search(root.right,dif,one);
+        else
+            return search(root.left,dif,one);
+    }
+    
+    
+解题思路2：利用中序遍历得到升序的数组，问题转化为有序数组的两数之和问题
+public boolean findTarget(TreeNode root, int k) {
+        List<Integer> nums = dfs(root);
+        int i = 0,j = nums.size()-1;
+        while(i<j)
+        {
+            int sum = nums.get(i)+nums.get(j);
+            if(sum==k)
+                return true;
+            else if(sum>k)
+                j--;
+            else
+                i++;
+        }
+        return false;
+    }
+    public List<Integer> dfs(TreeNode root)
+    {
+        List<Integer> ans = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode cur = root;
+        while(cur!=null||!stack.isEmpty())
+        {
+            while(cur!=null)
+            {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode node = stack.pop();
+            ans.add(node.val);
+            cur = node.right;
+        }
+        return ans;
+    }
