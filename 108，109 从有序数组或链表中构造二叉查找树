@@ -1,0 +1,61 @@
+
+108. Convert Sorted Array to Binary Search Tree(Easy)
+Given the sorted array: [-10,-3,0,5,9],
+
+One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
+
+      0
+     / \
+   -3   9
+   /   /
+ -10  5
+ 要求：树的高度不能相差超过1
+ 
+ 解题思路：每次迭代找到数组中间的数字作为节点，左边数组用来迭代构造左子树，右边数组用来迭代构造右子树
+ （Arrays.copyOfRange(int[] nums,int start,int end)可以复制一段数组为一个新数组）
+ 
+ public TreeNode sortedArrayToBST(int[] nums) {
+        int n = nums.length;
+        if(n==0)
+            return null;
+        TreeNode root = new TreeNode(nums[n/2]);
+        int[] rightNums = Arrays.copyOfRange(nums,n/2+1,n);
+        int[] leftNums = Arrays.copyOfRange(nums,0,n/2);
+        root.left = sortedArrayToBST(leftNums);
+        root.right = sortedArrayToBST(rightNums);
+        return root;
+    }
+    
+    
+ 109. Convert Sorted List to Binary Search Tree (Medium)
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ 
+ 解题思路：先把ListNode中的数值放在数组中，再把有序数组按上述方法转换为高度平衡树
+ （用list.subList(int start,int end)来复制截取链表中的某一段成为一个新的链表）
+ 
+ public TreeNode sortedListToBST(ListNode head) {
+        List<Integer> nums = new ArrayList<Integer>();
+        while(head!=null)
+        {
+            nums.add(head.val);
+            head = head.next;
+        }
+        return helper(nums);
+    }
+    public TreeNode helper(List<Integer> nums)
+    {
+        int n = nums.size();
+        if(n==0)
+            return null;
+        TreeNode root = new TreeNode(nums.get(n/2));
+        List<Integer> leftNums = nums.subList(0,n/2);
+        List<Integer> rightNums = nums.subList(n/2+1,n);
+        root.left = helper(leftNums);
+        root.right = helper(rightNums);
+        return root;
+    }
