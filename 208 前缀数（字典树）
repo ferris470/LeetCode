@@ -1,0 +1,130 @@
+208. Implement Trie (Prefix Tree)(Medium)
+要求：构造一个Trie
+Example:
+Trie trie = new Trie();
+
+trie.insert("apple");
+trie.search("apple");   // returns true
+trie.search("app");     // returns false
+trie.startsWith("app"); // returns true
+trie.insert("app");   
+trie.search("app");     // returns true
+
+
+解题思路：
+private class Node{
+        Node[] child = new Node[26];
+        boolean isLeaf;
+    }
+    Node root = new Node();
+    /** Initialize your data structure here. */
+    public Trie() {
+        
+    }
+    
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        insert(word,root);
+    }
+    private void insert(String word,Node root)
+    {
+        if(root==null)
+            return;
+        if(word.length()==0)
+        {
+            root.isLeaf = true;
+            return;
+        }
+        int index = indexOfChar(word.charAt(0));
+        if(root.child[index]==null)
+            root.child[index] = new Node();
+        insert(word.substring(1),root.child[index]);
+    }
+    private int indexOfChar(char c)
+    {
+        return c-'a';
+    }
+    
+    /** Returns if the word is in the trie. */
+    public boolean search(String word) {
+        return search(word,root);
+    }
+    private boolean search(String word,Node root)
+    {
+        if(root==null)
+            return false;
+        if(word.length()==0)
+            return root.isLeaf;
+        int index = indexOfChar(word.charAt(0));
+        if(root.child[index]==null)
+            return false;
+        return search(word.substring(1),root.child[index]);
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    public boolean startsWith(String prefix) {
+        return startsWith(prefix,root);
+    }
+    private boolean startsWith(String word,Node root)
+    {
+        if(root==null)
+            return false;
+        if(word.length()==0)
+            return true;
+        int index = indexOfChar(word.charAt(0));
+        if(root.child[index]==null)
+            return false;
+        return startsWith(word.substring(1),root.child[index]);
+    }
+    
+    
+    
+677. Map Sum Pairs (Medium)
+要求：实现一个 Trie，用来求前缀和
+
+Input: insert("apple", 3), Output: Null
+Input: sum("ap"), Output: 3
+Input: insert("app", 2), Output: Null
+Input: sum("ap"), Output: 5
+
+解题思路：与构造Trie相比，增加了val属性
+private class Node{
+        Node[] child = new Node[26];
+        int val;
+    }
+    Node root = new Node();
+    /** Initialize your data structure here. */
+    public MapSum() {
+        
+    }
+    
+    public void insert(String key, int val) {
+        insert(key,val,root);
+    }
+    private void insert(String key,int val,Node root){
+        if(root==null)
+            return;
+        if(key.length()==0){
+            root.val = val;
+            return;
+        }
+        int index = key.charAt(0)-'a';
+        if(root.child[index]==null)
+            root.child[index]=new Node();
+        insert(key.substring(1),val,root.child[index]);
+    }
+    public int sum(String prefix) {
+        return sum(prefix,root);
+    }
+    private int sum(String prefix,Node root){
+        if(root==null)
+            return 0;
+        if(prefix.length()!=0){
+            int index = prefix.charAt(0)-'a';
+            return sum(prefix.substring(1),root.child[index]);
+        }
+        int sum = root.val;
+        for(Node child:root.child)
+            sum+=sum(prefix,child);
+        return sum;
+    }
