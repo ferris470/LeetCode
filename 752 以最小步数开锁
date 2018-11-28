@@ -1,0 +1,49 @@
+752. Open the Lock (Medium)
+要求：在不经过死锁状态的情况下以最小的步数到达target（0可以一步到9）
+Example 1:
+Input: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
+Output: 6
+Explanation:
+A sequence of valid moves would be "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202".
+Note that a sequence like "0000" -> "0001" -> "0002" -> "0102" -> "0202" would be invalid,
+because the wheels of the lock become stuck after the display becomes the dead end "0102".
+
+Example 2:
+Input: deadends = ["8888"], target = "0009"
+Output: 1
+Explanation:
+We can turn the last wheel in reverse to move from "0000" -> "0009".
+
+解题思路：从"0000"开始，每改变一次的可能有每位向前或向后旋转一个数，共有四位，
+也就是每个状态有八种可能，一旦与target一致，返回计数，否则加入队列和已经过集合中
+public int openLock(String[] deadends, String target) {
+        Set<String> set = new HashSet<String>();
+        for(String str:deadends)
+            set.add(str);
+        if(set.contains("0000"))
+            return -1;
+        if(target.equals("0000"))
+            return 0;
+        Queue<String> queue = new LinkedList<String>();
+        queue.add("0000");
+        Set<String> visit = new HashSet<String>();
+        for(int d = 1;!queue.isEmpty();d++)
+        {
+            for(int n = queue.size();n>0;n--){
+                String cur = queue.poll();
+                for(int i = 0;i<4;i++){
+                    for(int dif = 1;dif<10;dif+=8){
+                        char[] c = cur.toCharArray();
+                        c[i] = (char)((c[i]-'0'+dif)%10+'0');
+                        String s = new String(c);
+                        if(s.equals(target))
+                            return d;
+                        if(!visit.contains(s)&&!set.contains(s))
+                            queue.add(s);
+                        visit.add(s);
+                    }
+                }
+            }
+        }
+        return -1;
+    }
