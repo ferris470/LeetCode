@@ -39,3 +39,41 @@ class MyQueue {
         return out.isEmpty()&&in.isEmpty();
     }
 }
+
+
+225. Implement Stack using Queues (Easy)
+用队列实现栈
+
+解题思路：队列添加元素会默认添加到队尾，为了添加到队首，需要另外一个临时队列存储之前队列里的元素，添加新元素后再把临时队列里的元素添加回去
+class MyStack {
+    Queue<Integer> queue = new LinkedList<Integer>();
+    Queue<Integer> temp = new LinkedList<Integer>();
+    /** Initialize your data structure here. */
+    public MyStack() {
+        
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        while(!queue.isEmpty())
+            temp.add(queue.poll());
+        queue.add(x);
+        while(!temp.isEmpty())
+            queue.add(temp.poll());
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+        return queue.poll();
+    }
+    
+    /** Get the top element. */
+    public int top() {
+        return queue.peek();
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return queue.isEmpty()&&temp.isEmpty();
+    }
+}
