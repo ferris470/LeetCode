@@ -1,0 +1,11 @@
+217. Contains Duplicate (Easy)
+
+解题思路：利用HashSet不含重复元素的特点，判断添加元素是否成功
+public boolean containsDuplicate(int[] nums) {
+        Set<Integer> val = new HashSet<Integer>();
+        for(int num:nums){
+            if(!val.add(num))
+                return true;
+        }
+        return false;
+    }
