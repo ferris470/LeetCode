@@ -1,0 +1,17 @@
+## **数组中两个数的和为给定值**
+## [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/description/)
+
+解题思路：使用HashMap保存数值和索引，为防止重复元素替换索引，需要一边check一边put，HashMap查找的时间复杂度是O(N)，空间复杂度是O(N)
+
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int i = 0;i<nums.length;i++){
+            if(map.containsKey(target-nums[i]))
+                return new int[]{i,map.get(target-nums[i])};
+            else
+                map.put(nums[i],i);
+        }
+        return null;
+    }
+
+extGreaterEleme
