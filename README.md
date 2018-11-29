@@ -11,3 +11,4 @@
 ## 使用HashSet的题目：
 [**1 数组中两个数的和为给定值**](https://github.com/ferris470/LeetCode/blob/master/1%20%20%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E5%92%8C%E4%B8%BA%E7%BB%99%E5%AE%9A%E5%80%BC)
 
+[**594 最长和谐序列**](https://github.com/ferris470/LeetCode/blob/master/594%20%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%BA%8F%E5%88%97)
