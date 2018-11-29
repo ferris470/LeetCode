@@ -1,9 +1,9 @@
 
-## **数组中两个数的和为给定值**
+## 数组中两个数的和为给定值
 
 
 
-## [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/description/)
+## 1. Two Sum (Easy)
 
 解题思路：使用HashMap保存数值和索引，为防止重复元素替换索引，需要一边check一边put，HashMap查找的时间复杂度是O(N)，空间复杂度是O(N)
 
