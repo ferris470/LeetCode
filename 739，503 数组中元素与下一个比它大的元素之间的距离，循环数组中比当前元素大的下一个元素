@@ -1,0 +1,55 @@
+数组中元素与下一个比它大的元素之间的距离
+739. Daily Temperatures (Medium)
+Input: [73, 74, 75, 71, 69, 72, 76, 73]
+Output: [1, 1, 4, 2, 1, 1, 0, 0]
+
+解题思路：用栈来存储角标，如果正在遍历的数字比栈顶的数字大，那他们角标的差就是我们要求的距离，然后pop，
+直到栈顶元素比当前元素大或栈为空就把当前元素的角标压到栈中
+public int[] dailyTemperatures(int[] T) {
+        int[] ans = new int[T.length];
+        Stack<Integer> stack = new Stack<Integer>();
+        for(int i = 0;i<T.length;i++){
+            if(stack.isEmpty()){
+                stack.push(i);
+                continue;
+            }
+            while(!stack.isEmpty()&&T[i]>T[stack.peek()]){
+                int preindex = stack.peek();
+                ans[preindex] = i-preindex;
+                stack.pop();
+            }
+            stack.push(i);
+        }
+        return ans;
+    }
+
+
+循环数组中比当前元素大的下一个元素
+503. Next Greater Element II (Medium)
+Input: [1,2,1]
+Output: [2,-1,2]
+
+解题思路：与上一道题的区别是数组可以循环，并且返回的是下一个更大的数值，主要思考如何处理循环问题，
+事实上只要按照顺序遍历两边即可，角标用i%n表示，第二遍遍历的数据不压入栈中
+public int[] nextGreaterElements(int[] nums) {
+        int[] ans = new int[nums.length];
+        if(nums.length==0)
+            return ans;
+        Arrays.fill(ans,-1);
+        Stack<Integer> stack = new Stack<Integer>();
+        int n = nums.length;
+        for(int i = 0;i<2*n;i++){
+            if(stack.isEmpty()){
+                stack.push(i);
+                continue;
+            }
+            int num = nums[i%n];
+            while(!stack.isEmpty()&&num>nums[stack.peek()]){
+                int index = stack.pop();
+                ans[index] = num;
+            }
+            if(i<n)
+                stack.push(i);
+        }
+        return ans;
+    }
