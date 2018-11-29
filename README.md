@@ -37,7 +37,3 @@
         return ans;
     }
 
-    
-public int[] n
-
-[enter link de
