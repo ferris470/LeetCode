@@ -1,0 +1,23 @@
+9. Palindrome Number (Easy)
+要求：不能把数字转化成字符串，不能占用多余空间
+Example 1:
+Input: 121
+Output: true
+Example 2:
+Input: -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+解题思路：把数字分成两半，后半段反转过来，再判断和前半段是否相等
+public boolean isPalindrome(int x) {
+        if(x==0)
+            return true;
+        if(x<0||x%10==0)
+            return false;
+        int right = 0;
+        while(x>right){
+            right = right*10+x%10;
+            x/=10;
+        }
+        return x==right||x == right/10;
+    }
