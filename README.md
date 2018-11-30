@@ -29,6 +29,11 @@
 
 [**9 判断一个整数是否是回文数**](https://github.com/ferris470/LeetCode/blob/master/9%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0)
 
+## 0，1字符串：
+
+[**696 统计二进制字符串中连续 1 和连续 0 数量相同的子字符串个数**](https://github.com/ferris470/LeetCode/blob/master/696%20%E7%BB%9F%E8%AE%A1%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E8%BF%9E%E7%BB%AD%201%20%E5%92%8C%E8%BF%9E%E7%BB%AD%200%20%E6%95%B0%E9%87%8F%E7%9B%B8%E5%90%8C%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AA%E6%95%B0)
+
+
 
 # 动态编程
 
