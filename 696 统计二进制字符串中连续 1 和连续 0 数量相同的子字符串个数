@@ -1,0 +1,21 @@
+统计二进制字符串中连续 1 和连续 0 数量相同的子字符串个数
+696. Count Binary Substrings (Easy)
+Input: "00110011"
+Output: 6
+Explanation: There are 6 substrings that have equal number of consecutive 1's and 0's: "0011", "01", "1100", "10", "0011", and "01".
+
+解题思路：用两个变量存储当前元素连续的个数和上一个不同元素连续的个数，连续 1 和连续 0 数量相同的子字符串个数要加上这两个连续个数之中的最小值
+public int countBinarySubstrings(String s) {
+        int cnt = 0;
+    	int precnt = 0,curcnt = 1;
+        for(int i = 0;i<s.length()-1;i++){
+            if(s.charAt(i)==s.charAt(i+1))
+                curcnt++;
+            else{
+            	cnt+=Math.min(precnt, curcnt);
+            	precnt = curcnt;
+            	curcnt = 1;
+            }
+        }
+        return cnt+Math.min(precnt, curcnt);
+    }
