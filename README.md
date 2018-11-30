@@ -29,6 +29,6 @@
 
 [**9 判断一个整数是否是回文数**](https://github.com/ferris470/LeetCode/blob/master/9%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%98%AF%E5%90%A6%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0)
 
-## 动态编程
+# 动态编程
 [**91 编码方式**](https://github.com/ferris470/LeetCode/blob/master/91%20%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F)
 
