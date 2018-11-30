@@ -1,0 +1,45 @@
+回文子字符串个数
+647. Palindromic Substrings (Medium)
+Input: "aaa"
+Output: 6
+Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
+
+解题思路1：找到所有子字符串，判断是否是回文字符串，时间复杂度：O(N^3)
+public int countSubstrings(String s) {
+        int ans = 0;
+        for(int i = 0;i<s.length();i++){
+            for(int j = i+1;j<=s.length();j++){
+                String sub = s.substring(i,j);
+                if(isPal(sub))
+                    ans++;
+            }
+        }
+        return ans;
+    }
+    public boolean isPal(String s){
+        int i = 0,j = s.length()-1;
+        while(i<j){
+            if(s.charAt(i)!=s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+    
+解题思路2：遍历回文的对称中心，然后向外扩展，时间复杂度：O(N^2)
+int ans = 0;
+    public int countSubstrings(String s) {
+        for(int i = 0;i<s.length();i++){
+            extend(s,i,i);
+            extend(s,i,i+1);
+        }
+        return ans;
+    }
+    public void extend(String s,int start,int end){
+        while(start>=0&&end<s.length()&&s.charAt(start)==s.charAt(end)){
+            start--;
+            end++;
+            ans++;
+        }
+    }
