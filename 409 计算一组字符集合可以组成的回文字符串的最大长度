@@ -1,0 +1,21 @@
+409. Longest Palindrome (Easy)
+Input : "abccccdd"
+Output : 7
+Explanation : One longest palindrome that can be built is "dccaccd", whose length is 7.
+
+解题思路：沿用HashMap的思路，使用长度为256的固定长度的数组来记录每个字母出现的次数，使空间复杂度变为O(1)，
+出现奇数次的字母可以截取偶数个来构成回文，并让奇数中的一个字符放在中间
+public int longestPalindrome(String s) {
+        int[] cnts = new int[256];
+        for(char c:s.toCharArray()){
+            cnts[c-'0']++;
+        }
+        int ans = 0;
+        for(int cnt:cnts){
+            if((cnt&1)==0)
+                ans+=cnt;
+            else
+                ans+=(cnt-1);
+        }
+        return ans<s.length()?ans+1:ans;
+    }
