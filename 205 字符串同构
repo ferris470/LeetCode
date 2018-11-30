@@ -1,0 +1,20 @@
+205. Isomorphic Strings (Easy)
+Given "egg", "add", return true.
+Given "foo", "bar", return false.
+Given "paper", "title", return true.
+
+解题思路：用固定长度数组代替HashMap降低空间复杂度，来记录当前字母上一次出现的位置，如果上一次出现的位置都一样即为同构，
+需要注意的是数组初始化为0，默认每个字母第一次都出现在0的位置，为避免这种情况，所以记下的位置要从1开始
+public boolean isIsomorphic(String s, String t) {
+        if(s.length()!=t.length())
+            return false;
+        int[] ms = new int[256];
+        int[] mt = new int[256];
+        for(int i = 0;i<s.length();i++){
+            if(ms[s.charAt(i)]!=mt[t.charAt(i)])
+                return false;
+            ms[s.charAt(i)] = i+1;
+            mt[t.charAt(i)] = i+1;
+        }
+        return true;
+    }
