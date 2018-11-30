@@ -1,0 +1,23 @@
+两个字符串包含的字符是否完全相同
+242. Valid Anagram (Easy)
+s = "anagram", t = "nagaram", return true.
+s = "rat", t = "car", return false.
+
+解题思路：沿用HashMap的思路，可以用固定长度的数组来存储每个字母出现的次数，然后判断两个数组是否相等
+public boolean isAnagram(String s, String t) {
+        int[] as = new int[26];
+        int[] at = new int[26];
+        for(char c:s.toCharArray()){
+            int index = c-'a';
+            as[index] = as[index]+1;
+        }
+        for(char c:t.toCharArray()){
+            int index = c-'a';
+            at[index] = at[index]+1;
+        }
+        for(int i = 0;i<26;i++){
+            if(as[i]!=at[i])
+                return false;
+        }
+        return true;
+    }
