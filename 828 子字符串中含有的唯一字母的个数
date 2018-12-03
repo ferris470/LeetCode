@@ -1,0 +1,35 @@
+828. Unique Letter String (Hard)
+要求：答案要modulo 10 ^ 9 + 7.
+Example 1:
+Input: "ABC"
+Output: 10
+Explanation: All possible substrings are: "A","B","C","AB","BC" and "ABC".
+Evey substring is composed with only unique letters.
+Sum of lengths of all substring is 1 + 1 + 1 + 2 + 2 + 3 = 10
+Example 2:
+Input: "ABA"
+Output: 8
+Explanation: The same as example 1, except uni("ABA") = 1.
+
+解题思路：直接法：截取每个子字符串然后记下唯一出现的字母的个数（Time Limit Exceed）
+间接法：考虑每个字母单独出现在子字符串的个数，然后把子字符串个数相加
+例如："XAXXAX"，我们把A当作唯一字母考虑子字符串个数，
+我们可以插入括号构造子字符串，如： "XA(XAXX)AX" 
+在第一个和第二个A中插入"("，有两种插法（ "A(XA" 和 "AX(A"）
+在第二个和第三个A中插入 ")" ，有三种插法（"A)XXA", "AX)XA" 和 "AXX)A"）
+所以一共有 2 * 3 = 6 个字符串使得A是唯一字母
+public int uniqueLetterString(String S) {
+        int ans = 0,mod = (int)Math.pow(10,9)+7;
+        int[][] c = new int[26][2];
+        for(int i = 0;i<26;i++)
+            Arrays.fill(c[i],-1);
+        for(int i = 0;i<S.length();i++){
+            int index = S.charAt(i)-'A';
+            ans = (ans+(i-c[index][1])*(c[index][1]-c[index][0])%mod)%mod;
+            c[index] = new int[]{c[index][1],i};
+        }
+        for(int i = 0;i<26;i++){
+            ans = (ans+(S.length()-c[i][1])*(c[i][1]-c[i][0])%mod)%mod;
+        }
+        return ans;
+    }
