@@ -1,0 +1,32 @@
+344. Reverse String (Easy)
+Example 1:
+Input: "hello"
+Output: "olleh"
+Example 2:
+Input: "A man, a plan, a canal: Panama"
+Output: "amanaP :lanac a ,nalp a ,nam A"
+
+解题思路1：用StringBuilder反向存储字符
+public String reverseString(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1;i<=s.length();i++){
+            sb.append(s.charAt(s.length()-i));
+        }
+        return sb.toString();
+    }
+    
+解题思路2：把String转化为char数组，然后双指针交换字符
+public String reverseString(String s) {
+        char[] c = s.toCharArray();
+        int i = 0,j = s.length()-1;
+        while(i<j){
+            char temp = c[i];
+            c[i] = c[j];
+            c[j] = temp;
+            i++;
+            j--;
+        }
+        return new String(c);
+    }
+    
+第二种方法运行时间更短。
