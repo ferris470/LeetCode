@@ -49,3 +49,8 @@
 
 [**91 编码方式**](https://github.com/ferris470/LeetCode/blob/master/91%20%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F)
 
+# 数组
+
+[**283 把0移到数组的末尾**](https://github.com/ferris470/LeetCode/blob/master/283%20%E6%8A%8A0%E7%A7%BB%E5%88%B0%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%AB%E5%B0%BE)
+#
+
