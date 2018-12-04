@@ -1,0 +1,47 @@
+378. Kth Smallest Element in a Sorted Matrix ((Medium))
+matrix = [
+  [ 1,  5,  9],
+  [10, 11, 13],
+  [12, 13, 15]
+],
+k = 8,
+return 13.
+
+解题思路1：把元素添加到数组中进行排序，输出第k个元素
+public int kthSmallest(int[][] matrix, int k) {
+        int m = matrix.length,n = matrix[0].length;
+        int[] nums = new int[m*n];
+        for(int i = 0;i<m*n;i++){
+            nums[i] = matrix[i/n][i%n];
+        }
+        Arrays.sort(nums);
+        return nums[k-1];
+        
+    }
+    
+解题思路2：用优先队列构建小根堆，先把第一行添加进去，然后根据堆顶的最小元素添加相同列的下一行元素，poll了k-1之后返回堆顶元素
+public int kthSmallest(int[][] matrix, int k) {
+        int m = matrix.length,n = matrix[0].length;
+        PriorityQueue<Tuple> pq = new PriorityQueue<Tuple>();
+        for(int j = 0;j<n;j++)
+            pq.offer(new Tuple(0,j,matrix[0][j]));
+        for(int i = 0;i<k-1;i++){
+            Tuple t = pq.poll();
+            if(t.x==m-1)
+                continue;
+            pq.offer(new Tuple(t.x+1,t.y,matrix[t.x+1][t.y]));
+        }
+        return pq.poll().val;
+    }
+}
+
+class Tuple implements Comparable<Tuple>{
+    int x,y,val;
+    public Tuple(int x,int y,int val){
+        this.x = x;
+        this.y = y;
+        this.val = val;
+    }
+    public int compareTo(Tuple that){
+        return this.val-that.val;
+    }
