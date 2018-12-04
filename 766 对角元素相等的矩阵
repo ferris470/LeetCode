@@ -1,0 +1,27 @@
+766. Toeplitz Matrix (Easy)
+1234
+5123
+9512
+
+In the above grid, the diagonals are "[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]", 
+and in each diagonal all elements are the same, so the answer is True.
+
+解题思路：以第一行和第一列的元素为起始位置，对角线的角标是横纵同时加一的坐标
+public boolean isToeplitzMatrix(int[][] matrix) {
+        int m = matrix.length,n = matrix[0].length;
+        for(int i = 0;i<n;i++){
+            int num = matrix[0][i];
+            for(int dif = 1;dif<m&&i+dif<n;dif++){
+                if(matrix[dif][i+dif]!=num)
+                    return false;
+            }
+        }
+        for(int i = 1;i<m;i++){
+            int num = matrix[i][0];
+            for(int dif = 1;dif+i<m&&dif<n;dif++){
+                if(matrix[dif+i][dif]!=num)
+                    return false;
+            }
+        }
+        return true;
+    }
