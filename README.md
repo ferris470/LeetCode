@@ -57,4 +57,8 @@
 
 [**485 找出数组中最长的连续 1**](https://github.com/ferris470/LeetCode/blob/master/485%20%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E8%BF%9E%E7%BB%AD%201)
 
+## 有序矩阵：
+
 [**240 有序矩阵查找**](https://github.com/ferris470/LeetCode/blob/master/240%20%E6%9C%89%E5%BA%8F%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE)
+
+[**378 有序矩阵的 Kth Element**](https://github.com/ferris470/LeetCode/blob/master/378%20%E6%9C%89%E5%BA%8F%E7%9F%A9%E9%98%B5%E7%9A%84%20Kth%20Element)
