@@ -63,6 +63,8 @@
 
 [**565 嵌套数组**](https://github.com/ferris470/LeetCode/blob/master/565%20%E5%B5%8C%E5%A5%97%E6%95%B0%E7%BB%84)
 
+[**769 分隔数组**](https://github.com/ferris470/LeetCode/blob/master/769%20%E5%88%86%E9%9A%94%E6%95%B0%E7%BB%84)
+
 [**287 寻找重复元素**](https://github.com/ferris470/LeetCode/blob/master/287%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0)
 
 
