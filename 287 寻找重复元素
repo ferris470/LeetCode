@@ -1,0 +1,21 @@
+287. Find the Duplicate Number (Medium)
+要求：不改变数组顺序，时间复杂度小于O(N^2)，空间复杂度为O(1),数组中元素为1到n，n为数组长度
+
+解题思路：用一个较快指针（每次走两步）和一个较慢指针（每次走一步）来寻找切入点，
+找到切入点后，快指针从头开始，和慢指针一起每次都走一步，直到找到相同元素，时间复杂度为O(N)
+public int findDuplicate(int[] nums) {
+        int wugui = nums[0],tuzi = nums[0];
+		
+		do{
+				wugui = nums[wugui];
+				tuzi = nums[nums[tuzi]];
+		}
+		while(wugui!=tuzi);
+		
+		tuzi = nums[0];
+        while(tuzi!=wugui){
+            tuzi = nums[tuzi];
+            wugui = nums[wugui];
+        }
+        return wugui;
+    }
