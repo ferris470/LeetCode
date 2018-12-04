@@ -63,6 +63,9 @@
 
 [**448 寻找所有丢失的元素**](https://github.com/ferris470/LeetCode/blob/master/448%20%E5%AF%BB%E6%89%BE%E6%89%80%E6%9C%89%E4%B8%A2%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0)
 
+[**442 寻找所有重复的元素**](https://github.com/ferris470/LeetCode/blob/master/442%20%E5%AF%BB%E6%89%BE%E6%89%80%E6%9C%89%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0)
+
+
 ## 有序矩阵：
 
 [**240 有序矩阵查找**](https://github.com/ferris470/LeetCode/blob/master/240%20%E6%9C%89%E5%BA%8F%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE)
