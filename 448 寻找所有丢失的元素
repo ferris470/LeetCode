@@ -1,0 +1,26 @@
+448. Find All Numbers Disappeared in an Array (Easy)
+题目：被替换的元素不止一个，但元素范围还是1-n，要求时间复杂度O(N)，空间复杂度O(1)
+Example: 
+Input:
+[4,3,2,7,8,2,3,1]
+Output:
+[5,6]
+
+解题思路：和上一题相同，通过与后置位元素交换的方法使元素放在正确的位置上
+public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> ans = new ArrayList<Integer>();
+        for(int i = 0;i<nums.length;i++){
+            while(nums[i]-1!=i&&nums[nums[i]-1]!=nums[i])
+                swap(nums,i,nums[i]-1);
+        }
+        for(int i = 0;i<nums.length;i++){
+            if(nums[i]-1!=i)
+                ans.add(i+1);
+        }
+        return ans;
+    }
+    public void swap(int[] nums,int i,int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
