@@ -59,6 +59,10 @@
 
 [**287 寻找重复元素**](https://github.com/ferris470/LeetCode/blob/master/287%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0)
 
+
+## 数组元素在[1,n]之间的替换重复缺失问题：
+
+
 [**645 一个数组元素在 [1, n] 之间，其中一个数被替换为另一个数，找出重复的数和丢失的数**](https://github.com/ferris470/LeetCode/blob/master/645%20%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%9C%A8%20%5B1,%20n%5D%20%E4%B9%8B%E9%97%B4%EF%BC%8C%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E8%A2%AB%E6%9B%BF%E6%8D%A2%E4%B8%BA%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%EF%BC%8C%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%92%8C%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0)
 
 [**448 寻找所有丢失的元素**](https://github.com/ferris470/LeetCode/blob/master/448%20%E5%AF%BB%E6%89%BE%E6%89%80%E6%9C%89%E4%B8%A2%E5%A4%B1%E7%9A%84%E5%85%83%E7%B4%A0)
