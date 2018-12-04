@@ -57,6 +57,8 @@
 
 [**485 找出数组中最长的连续 1**](https://github.com/ferris470/LeetCode/blob/master/485%20%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E8%BF%9E%E7%BB%AD%201)
 
+[**667 数组相邻差值的个数**](https://github.com/ferris470/LeetCode/blob/master/667%20%E6%95%B0%E7%BB%84%E7%9B%B8%E9%82%BB%E5%B7%AE%E5%80%BC%E7%9A%84%E4%B8%AA%E6%95%B0)
+
 [**287 寻找重复元素**](https://github.com/ferris470/LeetCode/blob/master/287%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0)
 
 
