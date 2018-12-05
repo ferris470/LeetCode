@@ -89,4 +89,8 @@
 ## 二分图：
 [**785 判断是否为二分图**](https://github.com/ferris470/LeetCode/blob/master/785%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E4%BA%8C%E5%88%86%E5%9B%BE)
 
-#
+## 拓扑排序：
+常用于在具有先序关系的任务规划中。
+[**207 课程安排的合法性**](https://github.com/ferris470/LeetCode/blob/master/207%20%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%E7%9A%84%E5%90%88%E6%B3%95%E6%80%A7)
+
+
