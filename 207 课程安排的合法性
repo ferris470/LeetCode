@@ -1,0 +1,40 @@
+207. Course Schedule (Medium)
+Example 1:
+Input: 2, [[1,0]] 
+Output: true
+Explanation: There are a total of 2 courses to take. 
+             To take course 1 you should have finished course 0. So it is possible.
+Example 2:
+Input: 2, [[1,0],[0,1]]
+Output: false
+Explanation: There are a total of 2 courses to take. 
+             To take course 1 you should have finished course 0, and to take course 0 you should
+             also have finished course 1. So it is impossible.
+             
+解题思路：使用DFS，以每个课程为起点，判断是否有环，使用list储存修完当前课程之后才可以修的课程，如果list存储的课程中有已经修过的，则不合法
+public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<Integer>[] graph = new List[numCourses];
+        for(int i = 0;i<graph.length;i++){
+            graph[i] = new ArrayList<Integer>();
+        }
+        boolean[] visit = new boolean[numCourses];
+        for(int[] pre:prerequisites){
+            graph[pre[1]].add(pre[0]);
+        }
+        for(int i = 0;i<numCourses;i++){
+            if(!dfs(graph,visit,i))
+                return false;
+        }
+        return true;
+    }
+    public boolean dfs(List<Integer>[] graph,boolean[] visit,int course){
+        if(visit[course])
+            return false;
+        visit[course] = true;
+        for(int i = 0;i<graph[course].size();i++){
+            if(!dfs(graph,visit,graph[course].get(i)))
+                return false;
+        }
+        visit[course] = false;
+        return true;
+    }
