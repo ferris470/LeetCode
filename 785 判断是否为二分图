@@ -1,0 +1,44 @@
+785. Is Graph Bipartite? (Medium)
+如果可以用两种颜色对图中的节点进行着色，并且保证相邻的节点颜色不同，那么这个图就是二分图。
+Input: [[1,3], [0,2], [1,3], [0,2]]
+Output: true
+Explanation:
+The graph looks like this:
+0----1
+|    |
+|    |
+3----2
+We can divide the vertices into two groups: {0, 2} and {1, 3}.
+Example 2:
+Input: [[1,2,3], [0,2], [0,1,3], [0,2]]
+Output: false
+Explanation:
+The graph looks like this:
+0----1
+| \  |
+|  \ |
+3----2
+We cannot find a way to divide the set of nodes into two independent subsets.
+
+解题思路：使用color来标记每个节点的颜色，共有三种状态
+0：null，1:red，-1:black
+遍历每个相邻节点，若已经着色则判断是否与当前节点颜色不同，否则进行着色
+由于图可能非连通，所以每个节点及相邻节点都需要遍历
+public boolean isBipartite(int[][] graph) {
+        int[] color = new int[graph.length];
+        for(int i = 0;i<graph.length;i++){
+            if(color[i]==0&&!isValid(graph,color,1,i))
+                return false;
+        }
+        return true;
+    }
+    public boolean isValid(int[][] graph,int[] color,int curcolor,int index){
+        if(color[index]!=0)
+            return color[index]==curcolor;
+        color[index]=curcolor;
+        for(int j = 0;j<graph[index].length;j++){
+            if(!isValid(graph,color,-curcolor,graph[index][j]))
+                return false;
+        }
+        return true;
+    }
