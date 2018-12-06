@@ -98,6 +98,7 @@
 
 ## 并查集：
 并查集可以动态地连通两个点，并且可以非常快速地判断两个点是否连通。
+
 [**684 冗余连接**](https://github.com/ferris470/LeetCode/blob/master/684%20%E5%86%97%E4%BD%99%E8%BF%9E%E6%8E%A5)
 
 
