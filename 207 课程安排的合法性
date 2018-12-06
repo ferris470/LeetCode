@@ -11,7 +11,8 @@ Explanation: There are a total of 2 courses to take.
              To take course 1 you should have finished course 0, and to take course 0 you should
              also have finished course 1. So it is impossible.
              
-解题思路：使用DFS，以每个课程为起点，判断是否有环，使用list储存修完当前课程之后才可以修的课程，如果list存储的课程中有已经修过的，则不合法
+解题思路1：使用DFS，使用list储存修完当前课程之后才可以修的课程，设置全局变量标记每门课程是否已经修过，
+以每个课程为起点，判断是否有环，如果没有环则将这门课程标记为已修
 public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] graph = new List[numCourses];
         for(int i = 0;i<graph.length;i++){
@@ -22,19 +23,52 @@ public boolean canFinish(int numCourses, int[][] prerequisites) {
             graph[pre[1]].add(pre[0]);
         }
         for(int i = 0;i<numCourses;i++){
-            if(!dfs(graph,visit,i))
+            if(!dfs(graph,visit,i,new boolean[numCourses]))
                 return false;
         }
         return true;
     }
-    public boolean dfs(List<Integer>[] graph,boolean[] visit,int course){
+    public boolean dfs(List<Integer>[] graph,boolean[] visit,int course,boolean[] isLoop){
         if(visit[course])
+            return true;
+        if(isLoop[course])
             return false;
-        visit[course] = true;
+        isLoop[course] = true;
         for(int i = 0;i<graph[course].size();i++){
-            if(!dfs(graph,visit,graph[course].get(i)))
+            if(!dfs(graph,visit,graph[course].get(i),isLoop))
                 return false;
         }
-        visit[course] = false;
+        visit[course] = true;
         return true;
+    }
+    
+ 解题思路2：使用BFS，并用degree数组来存储修每门课程之前需要完成的课程数，把需要提前完成的课程数目为0的课添加到队列中，
+ 每释放队列的一个元素代表修完了一门课程，然后遍历以这门课程为先决课程的课，对应的degree减一，
+ 当degree为0时表示这门课也可以修了，就把它添加到队列中
+ public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<Integer>[] graph = new List[numCourses];
+        for(int i = 0;i<graph.length;i++){
+            graph[i] = new ArrayList<Integer>();
+        }
+        int[] degree = new int[numCourses];
+        for(int[] pre:prerequisites){
+            degree[pre[0]]++;
+            graph[pre[1]].add(pre[0]);
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for(int i = 0;i<numCourses;i++){
+            if(degree[i]==0)
+                queue.offer(i);
+        }
+        int visit = 0;
+        while(!queue.isEmpty()){
+            int from = queue.poll();
+            visit++;
+            for(int to:graph[from]){
+                degree[to]--;
+                if(degree[to]==0)
+                    queue.offer(to);
+            }
+        }
+        return visit==numCourses?true:false;
     }
