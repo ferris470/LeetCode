@@ -96,4 +96,10 @@
 
 [**210 课程安排的顺序**](https://github.com/ferris470/LeetCode/blob/master/210%20%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92%E7%9A%84%E9%A1%BA%E5%BA%8F)
 
+## 并查集：
+并查集可以动态地连通两个点，并且可以非常快速地判断两个点是否连通。
+[**684 冗余连接**](https://github.com/ferris470/LeetCode/blob/master/684%20%E5%86%97%E4%BD%99%E8%BF%9E%E6%8E%A5)
+
+
+
 
