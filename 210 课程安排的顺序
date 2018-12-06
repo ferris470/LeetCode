@@ -4,8 +4,8 @@ There are a total of 4 courses to take. To take course 3 you should have finishe
 Both courses 1 and 2 should be taken after you finished course 0.
 So one correct course order is [0,1,2,3]. Another correct ordering is[0,2,1,3].
 
-解题思路：使用BFS，先用数组记录下上每堂课的先决课程数目，项队列中加入不需要先决课程就可以上的课，然后遍历这些课程，
-把以这些课程为先决条件的课程的先决条件减一，知道没有先决课程数，就添加到队列中
+解题思路1：使用BFS，先用数组记录下上每堂课的先决课程数目，项队列中加入不需要先决课程就可以上的课，然后遍历这些课程，
+把以这些课程为先决条件的课程的先决条件减一，直到没有先决课程数，就添加到队列中
 public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] ans = new int[numCourses];
         List<Integer>[] graph = new List[numCourses];
@@ -34,3 +34,46 @@ public int[] findOrder(int numCourses, int[][] prerequisites) {
         }
         return visit==numCourses?ans:new int[0];
     }
+
+解题思路2：使用DFS，设置全局变量标记当前遍历课程是否已经修过，以每个课程为入口，设置局部变量标记是否存在环，如果不存在环则把当前课程设置为已修，
+并把当前课程添加到栈中，先添加的课程后修
+public int[] findOrder(int numCourses, int[][] prerequisites) {
+	    List<Integer>[] graphic = new List[numCourses];
+	    for (int i = 0; i < numCourses; i++) {
+	        graphic[i] = new ArrayList<>();
+	    }
+	    for (int[] pre : prerequisites) {
+	        graphic[pre[1]].add(pre[0]);
+	    }
+	    Stack<Integer> postOrder = new Stack<>();
+	    boolean[] globalMarked = new boolean[numCourses];
+	    for (int i = 0; i < numCourses; i++) {
+	        if (!dfs(globalMarked, graphic, i, postOrder,new boolean[numCourses])) {
+	            return new int[0];
+	        }
+	    }
+	    int[] orders = new int[numCourses];
+	    for (int i = 0; i < numCourses; i++) {
+	        orders[i] = postOrder.pop();
+	    }
+	    return orders;
+	}
+
+	private boolean dfs(boolean[] globalMarked, List<Integer>[] graphic,
+	                         int curNode, Stack<Integer> postOrder,boolean[] isLoop) {
+
+	    if (globalMarked[curNode]) {
+	        return true;
+	    }
+        if(isLoop[curNode])
+            return false;
+	    isLoop[curNode] = true;
+	    for (int nextNode : graphic[curNode]) {
+	        if (!dfs(globalMarked, graphic, nextNode, postOrder,isLoop)) {
+	            return false;
+	        }
+	    }
+	    globalMarked[curNode] = true;
+	    postOrder.push(curNode);
+	    return true;
+	}
