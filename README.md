@@ -116,3 +116,4 @@
 
 [**190 翻转一个数的比特位**](https://github.com/ferris470/LeetCode/blob/master/190%20%E7%BF%BB%E8%BD%AC%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E6%AF%94%E7%89%B9%E4%BD%8D)
 
+[**231 判断一个数是不是 2 的 n 次方**](https://github.com/ferris470/LeetCode/blob/master/231%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E4%B8%8D%E6%98%AF%202%20%E7%9A%84%20n%20%E6%AC%A1%E6%96%B9)
