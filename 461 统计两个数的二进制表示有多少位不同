@@ -44,7 +44,7 @@ public int hammingDistance(int x, int y) {
         return cnt;
     }
     
-6 使用Integer.bitCount()方法
+4 使用Integer.bitCount()方法
 public int hammingDistance(int x, int y) {
         int xor = x^y;
         return Integer.bitCount(xor);
