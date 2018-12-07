@@ -1,0 +1,22 @@
+数组中不重复的两个元素
+260. Single Number III (Medium)
+
+解题思路：两个不相等的元素在位级表示上必定会有一位存在不同。
+将数组的所有元素异或得到的结果为不存在重复的两个元素异或的结果。
+diff &= -diff 得到出 diff 最右侧不为 0 的位，也就是不存在重复的两个元素在位级表示上最右侧不同的那一位，利用这一位把数组的元素分为两个集合，
+同一个集合中相同的元素可以异或消为0，就可以将两个元素区分开来。
+public int[] singleNumber(int[] nums) {
+        int dif = 0;
+        for(int num:nums){
+            dif = dif^num;
+        }
+        dif &= -dif;
+        int[] ans = new int[2];
+        for(int num:nums){
+            if((dif&num)==0)
+                ans[0] = ans[0]^num;
+            else
+                ans[1] = ans[1]^num;
+        }
+        return ans;
+    }
