@@ -1,0 +1,16 @@
+693. Binary Number with Alternating Bits (Easy)
+Input: 10
+Output: True
+Explanation:
+The binary representation of 10 is: 1010.
+
+Input: 11
+Output: False
+Explanation:
+The binary representation of 11 is: 1011.
+
+解题思路：对于1010这种交替的数字，右移一位得到101，两个数的每一位都不同，异或得到1111，判断全一可以用该数加1与该数做&运算
+public boolean hasAlternatingBits(int n) {
+        int a = n^(n>>1);
+        return (a&(a+1))==0;
+    }
