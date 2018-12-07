@@ -110,4 +110,7 @@
 
 [**136 数组中唯一一个不重复的元素**](https://github.com/ferris470/LeetCode/blob/master/136%20%E6%95%B0%E7%BB%84%E4%B8%AD%E5%94%AF%E4%B8%80%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%85%83%E7%B4%A0)
 
+[**268 找出数组中缺失的那个数**](https://github.com/ferris470/LeetCode/blob/master/268%20%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%82%A3%E4%B8%AA%E6%95%B0)
+
+
 
