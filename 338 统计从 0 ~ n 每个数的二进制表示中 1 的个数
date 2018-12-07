@@ -1,0 +1,10 @@
+338. Counting Bits (Medium)
+
+解题思路：使用动态编程，i&(i-1)可以得到去掉i的二进制最后一个 0 的效果
+public int[] countBits(int num) {
+        int[] dp = new int[num+1];
+        for(int i = 1;i<=num;i++){
+            dp[i] = dp[i&(i-1)]+1;
+        }
+        return dp;
+    }
