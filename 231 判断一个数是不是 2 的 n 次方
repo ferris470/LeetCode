@@ -1,0 +1,14 @@
+231. Power of Two (Easy)
+
+解题思路：2的幂的二进制只有一个1
+统计一个数的二进制的1的个数：
+1：使用Integer.bitCount(int n)方法
+public boolean isPowerOfTwo(int n) {
+        int cnt = Integer.bitCount(n);
+        return n>0&&cnt==1;
+    }
+    
+2：利用1000&0111为0的规律
+public boolean isPowerOfTwo(int n) {
+        return n>0&&(n&(n-1))==0;
+    }
