@@ -135,3 +135,5 @@
 # 7 双指针
 [**167 有序数组的 Two Sum**](https://github.com/ferris470/LeetCode/blob/master/167%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%20Two%20Sum)
 
+
+[**633 两数平方和**](https://github.com/ferris470/LeetCode/blob/master/633%20%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C)
