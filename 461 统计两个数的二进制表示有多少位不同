@@ -1,0 +1,51 @@
+统计两个数的二进制表示有多少位不同
+461. Hamming Distance (Easy)
+Input: x = 1, y = 4
+Output: 2
+Explanation:
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+       
+解题思路：把x和y异或，1的个数代表两个数不同的位数
+统计一个二进制数字的1的位数有：
+1 转换为二进制字符串统计1的个数（速度最慢）
+public int hammingDistance(int x, int y) {
+        int xor = x^y;
+        String xo = Integer.toBinaryString(xor);
+        int cnt = 0;
+        for(int i = 0;i<xo.length();i++){
+            if(xo.charAt(i)=='1')
+                cnt++;
+        }
+        return cnt;
+    }
+    
+2 和1做&运算，判断最低位是否为1，然后右移一位，直到该数为0为止
+public int hammingDistance(int x, int y) {
+        int xor = x^y;
+        int cnt = 0;
+        while(xor!=0){
+            if((xor&1)==1)
+                cnt++;
+            xor=xor>>1;
+        }
+        return cnt;
+    }
+    
+3 用n&(n-1)来去除最后一个1，直到该数为0为止判断进行了多少次操作（速度最快）
+public int hammingDistance(int x, int y) {
+        int xor = x^y;
+        int cnt = 0;
+        while(xor!=0){
+            xor = xor&(xor-1);
+            cnt++;
+        }
+        return cnt;
+    }
+    
+6 使用Integer.bitCount()方法
+public int hammingDistance(int x, int y) {
+        int xor = x^y;
+        return Integer.bitCount(xor);
+    }
