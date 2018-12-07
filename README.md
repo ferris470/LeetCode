@@ -114,3 +114,5 @@
 
 [**260 数组中不重复的两个元素**](https://github.com/ferris470/LeetCode/blob/master/260%20%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%85%83%E7%B4%A0)
 
+[**190 翻转一个数的比特位**](https://github.com/ferris470/LeetCode/blob/master/190%20%E7%BF%BB%E8%BD%AC%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E6%AF%94%E7%89%B9%E4%BD%8D)
+
