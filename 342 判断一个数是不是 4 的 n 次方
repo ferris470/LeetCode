@@ -1,0 +1,21 @@
+693. Binary Number with Alternating Bits (Easy)
+Example 1:
+Input: 16
+Output: true
+Example 2:
+Input: 5
+Output: false
+
+解题思路：4的幂的二进制只有一位是1，且位于奇数位上
+public boolean isPowerOfFour(int num) {
+        if(num==1)
+            return true;
+        if(num<0||(num&(num-1))!=0)
+            return false;
+        int cnt = 0;
+        while(num!=0){
+            num>>>=1;
+            cnt++;
+        }
+        return (cnt&1)==1;
+    }
