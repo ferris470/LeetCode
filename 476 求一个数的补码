@@ -1,0 +1,36 @@
+476. Number Complement (Easy)
+Input: 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+题目描述：不考虑二进制表示中的首 0 部分。
+
+解题思路：可以用该数和他的掩码异或，101的掩码是111，根据求掩码的方法不同可以有不同解法
+1 使用Integer.highestOneBit(int num)方法，如101调用这个方法得到4（100），然后左移一位减1得到掩码（速度最慢）
+public int findComplement(int num) {
+        int mask = (Integer.highestOneBit(num)<<1)-1;
+        return mask^num;
+    }
+    
+2 把值为1的mask左移30位，使1放在最高位剩下位为0，然后和num做&运算，直到不得0为止mask要一直右移，
+此时mask的停留在num的最高位1处，然后左移一位减1得到掩码
+public int findComplement(int num) {
+    if (num == 0) return 1;
+    int mask = 1 << 30;
+    while ((num & mask) == 0) mask >>= 1;
+    mask = (mask << 1) - 1;
+    return num ^ mask;
+}
+
+3 用num与num左移的数字做或运算赋给num（速度最快），例如对于 10000000 这样的数要扩展成 11111111，可以利用以下方法：
+  mask |= mask >> 1    11000000
+  mask |= mask >> 2    11110000
+  mask |= mask >> 4    11111111
+public int findComplement(int num) {
+    int mask = num;
+    mask |= mask >> 1;
+    mask |= mask >> 2;
+    mask |= mask >> 4;
+    mask |= mask >> 8;
+    mask |= mask >> 16;
+    return (mask ^ num);
+}
