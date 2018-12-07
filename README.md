@@ -120,3 +120,5 @@
 
 
 [**342 判断一个数是不是 4 的 n 次方**](https://github.com/ferris470/LeetCode/blob/master/342%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E4%B8%8D%E6%98%AF%204%20%E7%9A%84%20n%20%E6%AC%A1%E6%96%B9)
+
+[**693 判断一个数的位级表示是否不会出现连续的 0 和 1**](https://github.com/ferris470/LeetCode/blob/master/693%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E4%BD%8D%E7%BA%A7%E8%A1%A8%E7%A4%BA%E6%98%AF%E5%90%A6%E4%B8%8D%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%BF%9E%E7%BB%AD%E7%9A%84%200%20%E5%92%8C%201)
