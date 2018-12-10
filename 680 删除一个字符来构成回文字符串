@@ -1,0 +1,28 @@
+680. Valid Palindrome II (Easy)
+Input: "abca"
+Output: True
+Explanation: You could delete the character 'c'.
+题目描述：可以删除一个字符，判断是否能构成回文字符串。
+
+解题思路：使用双指针分别指向头尾，然后向中间移动直到他们所指的字符不相等，然后分别判断去掉前一个或者后一个能不能构成回文字符串
+public boolean validPalindrome(String s) {
+        int i = 0,j = s.length()-1;
+        while(i<j){
+            if(s.charAt(i)!=s.charAt(j))
+                return isValid(s,i,j-1)||isValid(s,i+1,j);
+            else{
+                i++;
+                j--;
+            }
+        }
+        return true;
+    }
+    public boolean isValid(String s,int start,int end){
+        while(start<end){
+            if(s.charAt(start)!=s.charAt(end))
+                return false;
+            start++;
+            end--;
+        }
+        return true;
+    }
