@@ -149,4 +149,11 @@
 [**524 最长子序列**](https://github.com/ferris470/LeetCode/blob/master/524%20%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97)
 
 
+
+# 8 排序
+
 [**215 Kth Element**](https://github.com/ferris470/LeetCode/blob/master/215%20Kth%20Element)
+
+[**347 出现频率最多的 k 个数**](https://github.com/ferris470/LeetCode/blob/master/347%20%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%9C%80%E5%A4%9A%E7%9A%84%20k%20%E4%B8%AA%E6%95%B0)
+
+
