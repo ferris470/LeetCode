@@ -1,0 +1,23 @@
+347. Top K Frequent Elements (Medium)
+Given [1,1,1,2,2,3] and k = 2, return [1,2].
+
+解题思路：桶排序，先用HashMap统计每个数字出现的次数，然后用若干个桶保存出现频率相同的数字，桶的下标代表出现的频率，
+然后从后往前遍历这些桶，直到找到k个元素
+public List<Integer> topKFrequent(int[] nums, int k) {
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for(int num:nums)
+            map.put(num,map.getOrDefault(num,0)+1);
+        List<Integer>[] fres = new ArrayList[nums.length+1];
+        for(int key:map.keySet()){
+            int fre = map.get(key);
+            if(fres[fre]==null)
+                fres[fre] = new ArrayList<Integer>();
+            fres[fre].add(key);
+        }
+        List<Integer> ans = new ArrayList<Integer>();
+        for(int i = fres.length-1;i>=0&&ans.size()<k;i--){
+            if(fres[i]!=null)
+        	    ans.addAll(fres[i]);
+        }
+        return ans;
+    }
