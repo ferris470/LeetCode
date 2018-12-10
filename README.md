@@ -141,3 +141,5 @@
 
 [**345 反转元音字符**](https://github.com/ferris470/LeetCode/blob/master/345%20%E5%8F%8D%E8%BD%AC%E5%85%83%E9%9F%B3%E5%AD%97%E7%AC%A6)
 
+[**680 删除一个字符来构成回文字符串**](https://github.com/ferris470/LeetCode/blob/master/680%20%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%9D%A5%E6%9E%84%E6%88%90%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2)
+
