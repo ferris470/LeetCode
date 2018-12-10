@@ -1,0 +1,28 @@
+524. Longest Word in Dictionary through Deleting (Medium)
+Input:
+s = "abpcplea", d = ["ale","apple","monkey","plea"]
+Output:
+"apple"
+题目描述：删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最大字符串。
+
+解题思路：利用双指针分别指向s和子序列的头部，每找到子序列的一个字符两个指针分别后移一位，否则只有指向s的指针后移，寻找长度最大子序列
+public String findLongestWord(String s, List<String> d) {
+        String ans = "";
+        for(String str:d){
+            int m = 0,n = 0;
+            while(m<s.length()){
+                if(s.charAt(m)==str.charAt(n)){
+                    m++;
+                    n++;
+                }
+                else
+                    m++;
+                if(n==str.length()){
+                    if(str.length()>ans.length()||(str.length()==ans.length()&&str.compareTo(ans)<0))
+                        ans = str;
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
