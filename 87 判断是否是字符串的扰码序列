@@ -1,0 +1,44 @@
+87. Scramble String (Hard)
+题目要求： s1 = "great":
+    great
+   /    \
+  gr    eat
+ / \    /  \
+g   r  e   at
+           / \
+          a   t
+s2 = "rgeat".
+    rgeat
+   /    \
+  rg    eat
+ / \    /  \
+r   g  e   at
+           / \
+          a   t
+s2是s1的扰码字符串
+
+解题思路：尝试把s1和s2按照不同的方式分开，迭代判断是否是扰码字符串
+public boolean isScramble(String s1, String s2) {
+        if(s1.length()!=s2.length())
+            return false;
+        if(s1.equals(s2))
+            return true;
+        int[] cnt = new int[26];
+        for(int i = 0;i<s1.length();i++){
+            cnt[s1.charAt(i)-'a']++;
+            cnt[s2.charAt(i)-'a']--;
+        }
+        for(int num:cnt){
+            if(num!=0)
+                return false;
+        }
+        for(int i = 1;i<s1.length();i++){
+            String l1 = s1.substring(0,i),r1 = s1.substring(i);
+            String l2 = s2.substring(0,i),r2 = s2.substring(i);
+            String l2r = s2.substring(0,s1.length()-i),r2r = s2.substring(s1.length()-i);
+            if((isScramble(l1,l2)&&isScramble(r1,r2))||(isScramble(l1,r2r)&&isScramble(r1,l2r))){
+                return true;
+            }
+        }
+        return false;
+    }
