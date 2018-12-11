@@ -152,8 +152,14 @@
 
 # 8 排序
 
+## 堆排序/快速排序
 [**215 Kth Element**](https://github.com/ferris470/LeetCode/blob/master/215%20Kth%20Element)
 
+## 桶排序
 [**347 出现频率最多的 k 个数**](https://github.com/ferris470/LeetCode/blob/master/347%20%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%9C%80%E5%A4%9A%E7%9A%84%20k%20%E4%B8%AA%E6%95%B0)
+
+[**451 按照字符出现次数对字符串排序**](https://github.com/ferris470/LeetCode/blob/master/451%20%E6%8C%89%E7%85%A7%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F)
+
+
 
 
