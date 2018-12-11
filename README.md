@@ -181,3 +181,5 @@
 [**763 分隔字符串使同种字符出现在一起**](https://github.com/ferris470/LeetCode/blob/master/763%20%E5%88%86%E9%9A%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BD%BF%E5%90%8C%E7%A7%8D%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E5%9C%A8%E4%B8%80%E8%B5%B7)
 
 [**605 种植花朵**](https://github.com/ferris470/LeetCode/blob/master/605%20%E7%A7%8D%E6%A4%8D%E8%8A%B1%E6%9C%B5)
+
+[**392 判断是否为子序列**](https://github.com/ferris470/LeetCode/blob/master/392%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E5%AD%90%E5%BA%8F%E5%88%97)
