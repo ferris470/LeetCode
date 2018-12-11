@@ -1,0 +1,27 @@
+452. Minimum Number of Arrows to Burst Balloons (Medium)
+Input:
+[[10,16], [2,8], [1,6], [7,12]]
+
+Output:
+2
+题目描述：气球在一个水平数轴上摆放，可以重叠，飞镖垂直投向坐标轴，使得路径上的气球都会刺破。求解最小的投飞镖次数使所有气球都被刺破。
+
+解题思路：也是计算不重叠的区间个数，不过和 Non-overlapping Intervals 的区别在于，[1, 2] 和 [2, 3] 在本题中算是重叠区间。
+public int findMinArrowShots(int[][] points) {
+        if(points.length==0)
+            return 0;
+        if(points.length==1)
+            return 1;
+        Arrays.sort(points,Comparator.comparingInt(o->o[0]));
+        int cnt = 1;
+        int[] pre = points[0];
+        for(int i = 1;i<points.length;i++){
+            if(points[i][0]>pre[1]){
+                cnt++;
+                pre = points[i];
+            }
+            else
+                pre = points[i][1]>pre[1]?pre:points[i];
+        }
+        return cnt;
+    }
