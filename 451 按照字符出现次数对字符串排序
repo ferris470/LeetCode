@@ -1,0 +1,33 @@
+451. Sort Characters By Frequency (Medium)
+Input:
+"tree"
+Output:
+"eert"
+Explanation:
+'e' appears twice while 'r' and 't' both appear once.
+So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+
+解题思路：统计每个字符出现的频率，使用链表数字代表桶，桶的下标是每个字母出现的频率，从后向前遍历，向字符串中添加对应字符
+public String frequencySort(String s) {
+        Map<Character,Integer> cnt = new HashMap<Character,Integer>();
+        for(char c:s.toCharArray()){
+            cnt.put(c,cnt.getOrDefault(c,0)+1);
+        }
+        List<Character>[] bucket = new List[s.length()+1];
+        for(char c:cnt.keySet()){
+            int fre = cnt.get(c);
+            if(bucket[fre]==null)
+                bucket[fre] = new ArrayList<Character>();
+            bucket[fre].add(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        for(int i = s.length();i>=0;i--){
+            if(bucket[i]!=null){
+                for(char c:bucket[i]){
+                    for(int j = 0;j<i;j++)
+                        sb.append(c);
+                }
+            }
+        }
+        return sb.toString();
+    }
