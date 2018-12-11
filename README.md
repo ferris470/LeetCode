@@ -31,6 +31,7 @@
 
 [**828 子字符串中含有的唯一字母的个数**](https://github.com/ferris470/LeetCode/blob/master/828%20%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%90%AB%E6%9C%89%E7%9A%84%E5%94%AF%E4%B8%80%E5%AD%97%E6%AF%8D%E7%9A%84%E4%B8%AA%E6%95%B0)
 
+[**87 判断是否是字符串的扰码序列**](https://github.com/ferris470/LeetCode/blob/master/87%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%B0%E7%A0%81%E5%BA%8F%E5%88%97)
 
 
 ## 回文字符串：
