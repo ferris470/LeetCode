@@ -1,0 +1,23 @@
+75. Sort Colors (Medium)
+Input: [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+题目描述：只有 0/1/2 三种颜色。
+要求：one pass，不占用额外空间
+
+解题思路：用zero来表示最右边的0的下标，用two来表示最左边2的下标，one表示当前遍历的元素下标，目标是通过交换使得当前遍历的元素为1（注意循环条件）
+public void sortColors(int[] nums) {
+        int zero = 0,one = 0,two = nums.length-1;
+        while(one<=two){
+            if(nums[one]==0)
+               swap(nums,zero++,one++); 
+            else if(nums[one]==2)
+                swap(nums,one,two--);
+            else
+                one++;
+        }
+    }
+    public void swap(int[] nums,int i,int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
