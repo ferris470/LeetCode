@@ -179,3 +179,5 @@
 [**406 根据身高和序号重组队列**](https://github.com/ferris470/LeetCode/blob/master/406%20%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E5%92%8C%E5%BA%8F%E5%8F%B7%E9%87%8D%E7%BB%84%E9%98%9F%E5%88%97)
 
 [**763 分隔字符串使同种字符出现在一起**](https://github.com/ferris470/LeetCode/blob/master/763%20%E5%88%86%E9%9A%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BD%BF%E5%90%8C%E7%A7%8D%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E5%9C%A8%E4%B8%80%E8%B5%B7)
+
+[**605 种植花朵**](https://github.com/ferris470/LeetCode/blob/master/605%20%E7%A7%8D%E6%A4%8D%E8%8A%B1%E6%9C%B5)
