@@ -1,0 +1,18 @@
+406. Queue Reconstruction by Height(Medium)
+Input:
+[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
+Output:
+[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
+题目描述：一个学生用两个分量 (h, k) 描述，h 表示身高，k 表示排在前面的有 k 个学生的身高比他高或者和他一样高。
+
+解题思路：按照身高降序，k值升序的顺序重新排列，然后按照k值插入到数组中
+public int[][] reconstructQueue(int[][] people) {
+       if(people.length==0||people.length==1)
+           return people;
+        Arrays.sort(people,(a,b)->(a[0]==b[0]?a[1]-b[1]:b[0]-a[0]));
+        List<int[]> ans = new ArrayList<int[]>();
+        for(int[] p:people){
+            ans.add(p[1],p);
+        }
+        return ans.toArray(new int[ans.size()][]);
+    }
