@@ -167,4 +167,10 @@
 [**75 荷兰国旗问题**](https://github.com/ferris470/LeetCode/blob/master/75%20%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98)
 
 
+# 9 贪心思想
+保证每次操作都是局部最优的，并且最后得到的结果是全局最优的。
+
+[**455 分配饼干**](https://github.com/ferris470/LeetCode/blob/master/455%20%E5%88%86%E9%85%8D%E9%A5%BC%E5%B9%B2)
+
+
 
