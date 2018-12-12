@@ -187,3 +187,5 @@
 [**665 修改一个数成为非递减数组**](https://github.com/ferris470/LeetCode/blob/master/665%20%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%AA%E6%95%B0%E6%88%90%E4%B8%BA%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E7%BB%84)
 
 [**122 股票的最大收益**](https://github.com/ferris470/LeetCode/blob/master/122%20%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E6%94%B6%E7%9B%8A)
+
+[**53 子数组最大的和**](https://github.com/ferris470/LeetCode/blob/master/53%20%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E7%9A%84%E5%92%8C)
