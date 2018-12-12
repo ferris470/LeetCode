@@ -192,7 +192,7 @@
 
 [**121 买入和售出股票最大的收益**](https://github.com/ferris470/LeetCode/blob/master/121%20%E4%B9%B0%E5%85%A5%E5%92%8C%E5%94%AE%E5%87%BA%E8%82%A1%E7%A5%A8%E6%9C%80%E5%A4%A7%E7%9A%84%E6%94%B6%E7%9B%8A)
 
-# 二分查找
+# 10 二分查找
 [**69 求开方**](https://github.com/ferris470/LeetCode/blob/master/69%20%E6%B1%82%E5%BC%80%E6%96%B9)
 
 
