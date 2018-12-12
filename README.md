@@ -198,3 +198,4 @@
 
 [**744 大于给定元素的最小元素**](https://github.com/ferris470/LeetCode/blob/master/744%20%E5%A4%A7%E4%BA%8E%E7%BB%99%E5%AE%9A%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%85%83%E7%B4%A0)
 
+[**540 有序数组的 Single Element**](https://github.com/ferris470/LeetCode/blob/master/540%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%20Single%20Element)
