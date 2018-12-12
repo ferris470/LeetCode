@@ -194,3 +194,7 @@
 
 # 二分查找
 [**69 求开方**](https://github.com/ferris470/LeetCode/blob/master/69%20%E6%B1%82%E5%BC%80%E6%96%B9)
+
+
+[**744 大于给定元素的最小元素**](https://github.com/ferris470/LeetCode/blob/master/744%20%E5%A4%A7%E4%BA%8E%E7%BB%99%E5%AE%9A%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%85%83%E7%B4%A0)
+
