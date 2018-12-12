@@ -183,3 +183,5 @@
 [**605 种植花朵**](https://github.com/ferris470/LeetCode/blob/master/605%20%E7%A7%8D%E6%A4%8D%E8%8A%B1%E6%9C%B5)
 
 [**392 判断是否为子序列**](https://github.com/ferris470/LeetCode/blob/master/392%20%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E5%AD%90%E5%BA%8F%E5%88%97)
+
+[**665 修改一个数成为非递减数组**](https://github.com/ferris470/LeetCode/blob/master/665%20%E4%BF%AE%E6%94%B9%E4%B8%80%E4%B8%AA%E6%95%B0%E6%88%90%E4%B8%BA%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E7%BB%84)
