@@ -1,0 +1,19 @@
+121. Best Time to Buy and Sell Stock (Easy)
+题目描述：只进行一次交易。
+
+解题思路：记录遍历到的数字中的最小值，后面遍历到的数字如果更小就更新买入的价格，否则更新售出的价格
+public int maxProfit(int[] prices) {
+        if(prices.length==0)
+            return 0;
+        int maxprofit = 0;
+        int buy = prices[0];
+        for(int i = 1;i<prices.length;i++){
+            if(prices[i]<buy)
+                buy = prices[i];
+            else{
+                int profit = prices[i]-buy;
+                maxprofit = Math.max(maxprofit,profit);
+            }
+        }
+        return maxprofit;
+    }
