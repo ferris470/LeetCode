@@ -1,0 +1,12 @@
+122. Best Time to Buy and Sell Stock II (Easy)
+题目描述：一次股票交易包含买入和卖出，多个交易之间不能交叉进行。
+
+解题思路：可以进行多次交易，只要prices[i]>prices[i-1]交易就可以进行，使用贪心思想保证局部每次交易都进行就可以得到最大收益
+public int maxProfit(int[] prices) {
+        int max = 0;
+        for(int i = 1;i<prices.length;i++){
+            if(prices[i]>prices[i-1])
+                max+=prices[i]-prices[i-1];
+        }
+        return max;
+    }
