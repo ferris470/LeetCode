@@ -1,0 +1,30 @@
+241. Different Ways to Add Parentheses (Medium)
+Input: "2-1-1".
+((2-1)-1) = 0
+(2-(1-1)) = 2
+Output : [0, 2]
+
+解题思路：以运算符为分隔符，把字符串分为左右两部分迭代后进行运算
+public List<Integer> diffWaysToCompute(String input) {
+        List<Integer> ans = new ArrayList<Integer>();
+        for(int i = 0;i<input.length();i++){
+            char c = input.charAt(i);
+            if(!Character.isDigit(c)){
+                List<Integer> lefts = diffWaysToCompute(input.substring(0,i));
+                List<Integer> rights = diffWaysToCompute(input.substring(i+1));
+                for(int left:lefts){
+                    for(int right:rights){
+                        if(c=='+')
+                            ans.add(left+right);
+                        else if(c=='-')
+                            ans.add(left-right);
+                        else
+                            ans.add(left*right); 
+                    }
+                }
+            }
+        }
+        if(ans.size()==0)
+            ans.add(Integer.valueOf(input));
+        return ans;
+    }
