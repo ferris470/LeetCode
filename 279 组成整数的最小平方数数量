@@ -1,7 +1,7 @@
 279. Perfect Squares (Medium)
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 
-解题思路：找出不大于n所有平方数，若n-平方数大于0并且没有访问过，证明二者之间有边，即寻找n~0之间的最短距离
+解题思路1：使用BFS，找出不大于n所有平方数，若n-平方数大于0并且没有访问过，证明二者之间有边，即寻找n~0之间的最短距离
 public int numSquares(int n) {
         if(n<=1)
             return n;
@@ -28,6 +28,35 @@ public int numSquares(int n) {
             }
         }
         return n;
+    }
+    public List<Integer> squares(int n){
+        List<Integer> set = new LinkedList<Integer>();
+        int num = 1;
+        int dif = 3;
+        while(num<=n){
+            set.add(num);
+            num+=dif;
+            dif+=2;
+        }
+        return set;
+    }
+
+解题思路2：动态编程，dp[i] = Math.min(dp[i],dp[i-sqrt]+1)
+public int numSquares(int n) {
+        if(n<=1)
+            return n;
+        List<Integer> sqrt = squares(n); 
+        int[] dp = new int[n+1];
+        for(int i = 1;i<=n;i++){
+            dp[i] = i;
+            for(int sq:sqrt){
+                if(sq>i)
+                    break;
+                else
+                    dp[i] = Math.min(dp[i],dp[i-sq]+1);
+            }
+        }
+        return dp[n];
     }
     public List<Integer> squares(int n){
         List<Integer> set = new LinkedList<Integer>();
