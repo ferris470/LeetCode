@@ -205,3 +205,5 @@
 [**153 旋转数组的最小数字**](https://github.com/ferris470/LeetCode/blob/master/153%20%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97)
 
 
+[**34 查找区间**](https://github.com/ferris470/LeetCode/blob/master/34%20%E6%9F%A5%E6%89%BE%E5%8C%BA%E9%97%B4)
+
