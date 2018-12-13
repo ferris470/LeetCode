@@ -201,3 +201,7 @@
 [**540 有序数组的 Single Element**](https://github.com/ferris470/LeetCode/blob/master/540%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%20Single%20Element)
 
 [**278 第一个错误的版本**](https://github.com/ferris470/LeetCode/blob/master/278%20%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC)
+
+[**153 旋转数组的最小数字**](https://github.com/ferris470/LeetCode/blob/master/153%20%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97)
+
+
