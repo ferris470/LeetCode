@@ -1,0 +1,27 @@
+34. Search for a Range (Medium)
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+
+解题思路：先找到目标值，然后扩大范围寻找区间
+public int[] searchRange(int[] nums, int target) {
+        int l = 0,h = nums.length-1;
+        while(l<=h){
+            int mid = l+(h-l)/2;
+            if(nums[mid]==target){
+                l = mid;
+                h = mid;
+                while(l>=0&&nums[l]==target)
+                    l--;
+                while(h<nums.length&&nums[h]==target)
+                    h++;
+                return new int[]{l+1,h-1};
+            }
+            else if(nums[mid]>target)
+                h = mid-1;
+            else
+                l = mid+1;
+        }
+        return new int[]{-1,-1};
+    }
