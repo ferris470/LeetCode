@@ -1,0 +1,16 @@
+153. Find Minimum in Rotated Sorted Array (Medium)
+Input: [3,4,5,1,2],
+Output: 1
+
+解题思路：因为数组旋转之前是有序的，因此中间的数要和最后一个比较，如果比后面大，证明最小值再后半段，l=m+1，否则h=m，因此循环条件是l<h
+public int findMin(int[] nums) {
+        int l = 0,h = nums.length-1;
+        while(l<h){
+            int mid = l+(h-l)/2;
+            if(nums[mid]>nums[h])
+                l = mid+1;
+            else
+                h = mid;
+        }
+        return nums[l];
+    }
