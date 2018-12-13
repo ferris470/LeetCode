@@ -211,3 +211,8 @@
 
 [**241 给表达式加括号**](https://github.com/ferris470/LeetCode/blob/master/241%20%E7%BB%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8A%A0%E6%8B%AC%E5%8F%B7)
 
+# 12 搜索
+## BFS：
+
+[**279 组成整数的最小平方数数量**](https://github.com/ferris470/LeetCode/blob/master/279%20%E7%BB%84%E6%88%90%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%B9%B3%E6%96%B9%E6%95%B0%E6%95%B0%E9%87%8F)
+# 
