@@ -1,0 +1,34 @@
+547. Friend Circles (Medium)
+Input:
+[[1,1,0],
+ [1,1,0],
+ [0,0,1]]
+Output: 2
+Explanation:The 0th and 1st students are direct friends, so they are in a friend circle.
+The 2nd student himself is in a friend circle. So return 2.
+
+解题思路：使用DFS判断是否连通，因为连通条件有直接和间接，因此不能简单的扫描四个方向，需要逐行扫描
+class Solution {
+    int m;
+    public int findCircleNum(int[][] M) {
+        m = M.length;
+        if(m==0)
+            return 0;
+        int ans = 0;
+        boolean[] visit = new boolean[m];
+        for(int i = 0;i<m;i++){
+            if(!visit[i]){
+                ans++;
+                dfs(M,i,visit);
+            }
+        }
+        return ans;
+    }
+    public void dfs(int[][] M,int i,boolean[] visit){
+        visit[i] = true;
+        for(int k = 0;k<m;k++){
+            if(M[i][k]==1&&!visit[k])
+                dfs(M,k,visit);
+        }
+    }
+}
