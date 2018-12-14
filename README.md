@@ -217,3 +217,7 @@
 [**279 组成整数的最小平方数数量**](https://github.com/ferris470/LeetCode/blob/master/279%20%E7%BB%84%E6%88%90%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%B9%B3%E6%96%B9%E6%95%B0%E6%95%B0%E9%87%8F)
 
 [**127 最短单词路径**](https://github.com/ferris470/LeetCode/blob/master/127%20%E6%9C%80%E7%9F%AD%E5%8D%95%E8%AF%8D%E8%B7%AF%E5%BE%84)
+
+## DFS
+[**695 查找最大的连通面积**](https://github.com/ferris470/LeetCode/blob/master/695%20%E6%9F%A5%E6%89%BE%E6%9C%80%E5%A4%A7%E7%9A%84%E8%BF%9E%E9%80%9A%E9%9D%A2%E7%A7%AF)
+
