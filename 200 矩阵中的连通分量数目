@@ -1,0 +1,37 @@
+200. Number of Islands (Medium)
+Input:
+11000
+11000
+00100
+00011
+Output: 3
+
+解题思路：使用DFS，把每一块连通的区域设置为1，每遇到一个起点进行一次计数
+class Solution {
+    int m,n;
+    int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+    public int numIslands(char[][] grid) {
+        m = grid.length;
+        if(m==0)
+            return 0;
+        n = grid[0].length;
+        int ans = 0;
+        for(int i = 0;i<m;i++){
+            for(int j = 0;j<n;j++){
+                if(grid[i][j]=='1'){
+                    ans++;
+                    dfs(grid,i,j);
+                }
+            }
+        }
+        return ans;
+    }
+    public void dfs(char[][] grid,int i,int j){
+        if(i<0||i>=m||j<0||j>=n||grid[i][j]=='0')
+            return;
+        grid[i][j] = '0';
+        for(int k = 0;k<4;k++){
+            dfs(grid,i+dir[k][0],j+dir[k][1]);
+        }
+    }
+}
