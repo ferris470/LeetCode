@@ -1,0 +1,46 @@
+130. Surrounded Regions (Medium)
+For example,
+X X X X
+X O O X
+X X O X
+X O X X
+After running your function, the board should be:
+X X X X
+X X X X
+X X X X
+X O X X
+题目描述：使被 'X' 包围的 'O' 转换为 'X'。
+
+解题思路：把与边界上的O相连的O标为T，剩下的O就是被X包围的O
+int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+	int m,n;
+	public void solve(char[][] board)
+	{
+        m = board.length;
+        if(m==0)
+            return;
+        n = board[0].length;
+        for(int i = 0;i<m;i++){
+            dfs(board,i,0);
+            dfs(board,i,n-1);
+        }
+        for(int i = 0;i<n;i++){
+            dfs(board,0,i);
+            dfs(board,m-1,i);
+        }
+        for(int i = 0;i<m;i++){
+            for(int j = 0;j<n;j++){
+                if(board[i][j]=='O')
+                    board[i][j] = 'X';
+                else if(board[i][j]=='T')
+                    board[i][j] = 'O';
+            }
+        }
+	}
+    public void dfs(char[][] board,int i,int j){
+        if(i<0||i>=m||j<0||j>=n||board[i][j]!='O')
+            return;
+        board[i][j]='T';
+        for(int k = 0;k<4;k++)
+            dfs(board,i+dir[k][0],j+dir[k][1]);
+    }
