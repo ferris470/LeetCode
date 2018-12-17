@@ -1,0 +1,27 @@
+17. Letter Combinations of a Phone Number (Medium)
+Input:Digit string "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+
+解题思路：使用DFS中的回溯解法，每次结束DFS后要将元素标记为未访问
+class Solution {
+    private static final String[] KEYS = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    public List<String> letterCombinations(String digits) {
+        List<String> ans = new ArrayList<String>();
+        if(digits.length()==0)
+            return ans;
+        dfs(0,digits,new StringBuilder(),ans);
+        return ans;
+    }
+    public void dfs(int start,String digits,StringBuilder sb,List<String> ans){
+        if(start==digits.length()){
+            ans.add(sb.toString());
+            return;
+        }
+        int index = Integer.valueOf(digits.charAt(start)-'0');
+        for(char c:KEYS[index].toCharArray()){
+            sb.append(c);
+            dfs(start+1,digits,sb,ans);
+            sb.deleteCharAt(sb.length()-1);
+        }
+    }
+}
