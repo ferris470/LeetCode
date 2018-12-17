@@ -1,0 +1,38 @@
+93. Restore IP Addresses(Medium)
+Given "25525511135",
+return ["255.255.11.135", "255.255.111.35"]
+
+解题思路：要注意把字符串分为了四段，并且每段的长度大于零小于四，注意每段不能出现首字母是0，但是数值不是0，或有多个0的情况
+class Solution {
+    public List<String> restoreIpAddresses(String s) {
+        List<String> ans = new ArrayList<String>();
+        if(s.length()==0)
+            return ans;
+        dfs(0,new StringBuilder(),ans,s,0);
+        return ans;
+    }
+    public static void dfs(int start,StringBuilder sb,List<String> ans,String s,int count){
+        if(start==s.length()&&count==4){
+            sb.deleteCharAt(sb.length()-1);
+            ans.add(sb.toString());
+            sb.append('.');
+            return;
+        }
+        if((start==s.length()&&count!=4)||start>s.length()||(start<s.length()&&count==4))
+        	return;
+        for(int i = 1;i<4;i++){
+            if(start+i<=s.length()){
+                String temp = s.substring(start,start+i);
+                int val = Integer.valueOf(temp);
+                if((val==0&&temp.length()!=1)||(val!=0&&temp.charAt(0)=='0'))
+                    continue;
+                if(val>=0&&val<256){
+                    sb.append(temp+".");
+                    dfs(start+i,sb,ans,s,count+1);
+                    sb.delete(sb.length()-temp.length()-1,sb.length());
+                }
+                else break;
+            }
+        }
+    }
+}
