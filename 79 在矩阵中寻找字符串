@@ -1,0 +1,51 @@
+79. Word Search (Medium)
+For example,
+Given board =
+[
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+word = "ABCCED", -> returns true,
+word = "SEE", -> returns true,
+word = "ABCB", -> returns false.
+
+解题思路：使用DFS中的回溯方法，用visit标记每个位置是否被遍历，如果从入口没有找到字符串，需要把这趟标记过程中的标记改回来
+class Solution {
+    private int[][] dir = {{0,1},{0,-1},{1,0},{-1,0}};
+	int m,n;
+	public boolean exist(char[][] board, String word)
+	{
+        m = board.length;
+        if(m==0)
+            return false;
+        n = board[0].length;
+        boolean[][] visit = new boolean[m][n];
+        for(int i = 0;i<m;i++){
+            for(int j = 0;j<n;j++){
+                if(board[i][j]==word.charAt(0))
+                {
+                    if(dfs(board,word.substring(1),i,j,visit))
+                        return true;
+                }
+            }
+        }
+        return false;
+	}
+    public boolean dfs(char[][] board,String word,int r,int c,boolean[][] visit){
+        if(word.length()==0)
+            return true;
+        visit[r][c] = true;
+        for(int[] d:dir){
+            int nextR = r+d[0];
+            int nextC = c+d[1];
+            if(nextR>=0&&nextR<m&&nextC>=0&&nextC<n&&board[nextR][nextC]==word.charAt(0)&&!visit[nextR][nextC]){
+                if(dfs(board,word.substring(1),nextR,nextC,visit)){
+                    return true;
+                }
+            }
+        }
+        visit[r][c] = false;
+        return false;
+    }
+}
