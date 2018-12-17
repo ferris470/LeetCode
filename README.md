@@ -219,6 +219,8 @@
 [**127 最短单词路径**](https://github.com/ferris470/LeetCode/blob/master/127%20%E6%9C%80%E7%9F%AD%E5%8D%95%E8%AF%8D%E8%B7%AF%E5%BE%84)
 
 ## DFS
+> 解决连通性问题：
+
 [**695 查找最大的连通面积**](https://github.com/ferris470/LeetCode/blob/master/695%20%E6%9F%A5%E6%89%BE%E6%9C%80%E5%A4%A7%E7%9A%84%E8%BF%9E%E9%80%9A%E9%9D%A2%E7%A7%AF)
 
 [**200 矩阵中的连通分量数目**](https://github.com/ferris470/LeetCode/blob/master/200%20%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E6%95%B0%E7%9B%AE)
@@ -229,4 +231,10 @@
 
 [**417 能到达的太平洋和大西洋的区域**](https://github.com/ferris470/LeetCode/blob/master/417%20%E8%83%BD%E5%88%B0%E8%BE%BE%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%92%8C%E5%A4%A7%E8%A5%BF%E6%B4%8B%E7%9A%84%E5%8C%BA%E5%9F%9F)
 
+> 解决排列组合问题：
+
 [**17 数字键盘组合**](https://github.com/ferris470/LeetCode/blob/master/17%20%E6%95%B0%E5%AD%97%E9%94%AE%E7%9B%98%E7%BB%84%E5%90%88)
+
+[**93 IP 地址划分**](https://github.com/ferris470/LeetCode/blob/master/93%20IP%20%E5%9C%B0%E5%9D%80%E5%88%92%E5%88%86)
+
+# Synchronizat
