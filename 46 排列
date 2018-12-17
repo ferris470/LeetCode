@@ -1,0 +1,37 @@
+46. Permutations (Medium)
+[1,2,3] have the following permutations:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+
+解题思路：用DFS的回溯算法，使用visit来标记本轮是否添加过此元素
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        if(nums.length==0)
+            return ans;
+        boolean[] visit = new boolean[nums.length];
+        dfs(nums,ans,new ArrayList<Integer>(),visit);
+        return ans;
+    }
+    public void dfs(int[] nums,List<List<Integer>> ans,List<Integer> list,boolean[] visit){
+        if(list.size()==nums.length){
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for(int i = 0;i<nums.length;i++){
+            if(!visit[i]){
+                list.add(nums[i]);
+                visit[i] = true;
+                dfs(nums,ans,list,visit);
+                visit[i] = false;
+                list.remove(list.size()-1);
+            }
+        }
+    } 
+}
