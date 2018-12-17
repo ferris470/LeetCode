@@ -1,0 +1,31 @@
+257. Binary Tree Paths (Easy)
+  1
+ /  \
+2    3
+ \
+  5
+["1->2->5", "1->3"]
+
+解题思路：使用DFS的回溯方法，注意最后叶节点的数值不要加到StringBuilder中
+class Solution {
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> ans = new ArrayList<String>();
+        if(root==null)
+            return ans;
+        dfs(root,ans,new StringBuilder());
+        return ans;
+    }
+    public void dfs(TreeNode root,List<String> ans,StringBuilder sb){
+        if(root.left==null&&root.right==null){
+            ans.add(sb.toString()+root.val);
+            return;
+        }
+        String temp = root.val+"->";
+        sb.append(temp);
+        if(root.left!=null)
+            dfs(root.left,ans,sb);
+        if(root.right!=null)
+            dfs(root.right,ans,sb);
+        sb.delete(sb.length()-temp.length(),sb.length());
+    }
+}
