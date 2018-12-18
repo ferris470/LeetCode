@@ -1,0 +1,34 @@
+47. Permutations II (Medium)
+[1,1,2] have the following unique permutations:
+[[1,1,2], [1,2,1], [2,1,1]]
+数组元素可能含有相同的元素，进行排列时就有可能出现重复的排列，要求重复的排列只返回一个。
+
+解题思路：需要对数组先排序，然后使用DFS，数组visit标记是否添加，若相邻两个相同并且后一个没有被访问过则跳过这个元素
+class Solution {
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        if(nums.length==0)
+            return ans;
+        Arrays.sort(nums);
+        boolean[] visit = new boolean[nums.length];
+        dfs(nums,ans,visit,new ArrayList<Integer>());
+        return ans;
+    }
+    public void dfs(int[] nums,List<List<Integer>> ans,boolean[] visit,List<Integer> list){
+        if(list.size()==nums.length){
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for(int i = 0;i<nums.length;i++){
+            if(i+1<nums.length&&nums[i]==nums[i+1]&&!visit[i+1])
+                continue;
+            if(!visit[i]){
+                visit[i] = true;
+                list.add(nums[i]);
+                dfs(nums,ans,visit,list);
+                visit[i] = false;
+                list.remove(list.size()-1);
+            }
+        }
+    }
+}
