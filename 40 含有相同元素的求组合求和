@@ -1,0 +1,42 @@
+40. Combination Sum II (Medium)
+For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,
+A solution set is:
+[
+  [1, 7],
+  [1, 2, 5],
+  [2, 6],
+  [1, 1, 6]
+]
+
+解题思路：为避免子集重复，需要排序并标注起始位置，为避免重复元素导致子集重复，需要visit来标记是否加入list，若两个元素相同，需要判断前一个是否加入，
+如果没有，则这个元素构成的子集会与前一个构成的造成重复
+class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        if(candidates.length==0)
+            return ans;
+        Arrays.sort(candidates);
+        boolean[] visit = new boolean[candidates.length];
+        dfs(candidates,ans,target,new ArrayList<Integer>(),0,visit);
+        return ans;
+    }
+    public void dfs(int[] candidates, List<List<Integer>> ans, int target,List<Integer> list,int start,boolean[] visit){
+        if(target==0){
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        if(target<0)
+            return;
+        for(int i = start;i<candidates.length;i++){
+            if(i-1>=0&&candidates[i]==candidates[i-1]&&!visit[i-1])
+                continue;
+            if(visit[i])
+                continue;
+            list.add(candidates[i]);
+            visit[i] = true;
+            dfs(candidates,ans,target-candidates[i],list,i+1,visit);
+            list.remove(list.size()-1);
+            visit[i] = false;
+        }
+    }
+}
