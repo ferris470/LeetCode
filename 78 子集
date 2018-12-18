@@ -1,0 +1,19 @@
+78. Subsets (Medium)
+找出集合的所有子集，子集不能重复，[1, 2] 和 [2, 1] 这种子集算重复
+
+解题思路：没有返回条件，所有子集都需要添加，为避免重复，需要设置起始值
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        dfs(nums,ans,new ArrayList<Integer>(),0);
+        return ans;
+    }
+    public void dfs(int[] nums,List<List<Integer>> ans,List<Integer> list,int start){
+        ans.add(new ArrayList<Integer>(list));
+        for(int i = start;i<nums.length;i++){
+            list.add(nums[i]);
+            dfs(nums,ans,list,i+1);
+            list.remove(list.size()-1);
+        }
+    }
+}
