@@ -1,0 +1,35 @@
+90. Subsets II (Medium)
+For example,
+If nums = [1,2,2], a solution is:
+
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+
+解题思路：有重复元素，需要排序并用visit标记
+class Solution {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        Arrays.sort(nums);
+        boolean[] visit = new boolean[nums.length];
+        dfs(nums,ans,visit,new ArrayList<Integer>(),0);
+        return ans;
+    }
+    public void dfs(int[] nums,List<List<Integer>> ans,boolean[] visit,List<Integer> list,int start){
+        ans.add(new ArrayList<Integer>(list));
+        for(int i = start;i<nums.length;i++){
+            if(i-1>=0&&nums[i-1]==nums[i]&&!visit[i-1])
+                continue;
+            list.add(nums[i]);
+            visit[i] = true;
+            dfs(nums,ans,visit,list,i+1);
+            list.remove(list.size()-1);
+            visit[i] = false;
+        }
+    }
+}
