@@ -231,7 +231,7 @@
 
 [**417 能到达的太平洋和大西洋的区域**](https://github.com/ferris470/LeetCode/blob/master/417%20%E8%83%BD%E5%88%B0%E8%BE%BE%E7%9A%84%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%92%8C%E5%A4%A7%E8%A5%BF%E6%B4%8B%E7%9A%84%E5%8C%BA%E5%9F%9F)
 
-> 解决排列组合问题：
+> 解决排列问题：
 
 [**17 数字键盘组合**](https://github.com/ferris470/LeetCode/blob/master/17%20%E6%95%B0%E5%AD%97%E9%94%AE%E7%9B%98%E7%BB%84%E5%90%88)
 
@@ -243,5 +243,9 @@
 
 [**47 含有相同元素求排列**](https://github.com/ferris470/LeetCode/blob/master/47%20%E5%90%AB%E6%9C%89%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%B1%82%E6%8E%92%E5%88%97)
 
-
+> 解决组合问题：
 [**77 组合**](https://github.com/ferris470/LeetCode/blob/master/77%20%E7%BB%84%E5%90%88)
+
+[**39 组合求和**](https://github.com/ferris470/LeetCode/blob/master/39%20%E7%BB%84%E5%90%88%E6%B1%82%E5%92%8C)
+
+#
