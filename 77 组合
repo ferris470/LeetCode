@@ -1,0 +1,37 @@
+77. Combinations (Medium)
+If n = 4 and k = 2, a solution is:
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
+
+解题思路：与排列不同的是不考虑子集内元素顺序，因此为了避免重复需要从小到大添加，设定start值来判断可添加元素位置
+class Solution {
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        if(n==0)
+            return ans;
+        boolean[] visit = new boolean[n];
+        dfs(n,ans,visit,k,new ArrayList<Integer>(),0);
+        return ans;
+    }
+    public void dfs(int n,List<List<Integer>> ans,boolean[] visit,int k,List<Integer> list,int start){
+        if(list.size()==k){
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        for(int i = start;i<n;i++){
+            if(!visit[i]){
+                visit[i] = true;
+                list.add(i+1);
+                dfs(n,ans,visit,k,list,i+1);
+                list.remove(list.size()-1);
+                visit[i] = false;
+            }
+        }
+    }
+}
