@@ -258,3 +258,5 @@
 [**78 子集**](https://github.com/ferris470/LeetCode/blob/master/78%20%E5%AD%90%E9%9B%86)
 
 [**90 含有相同元素求子集**](https://github.com/ferris470/LeetCode/blob/master/90%20%E5%90%AB%E6%9C%89%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%B1%82%E5%AD%90%E9%9B%86)
+
+[**131 分割字符串使得每个部分都是回文数**](https://github.com/ferris470/LeetCode/blob/master/131%20%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BD%BF%E5%BE%97%E6%AF%8F%E4%B8%AA%E9%83%A8%E5%88%86%E9%83%BD%E6%98%AF%E5%9B%9E%E6%96%87%E6%95%B0)
