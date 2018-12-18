@@ -1,0 +1,26 @@
+39. Combination Sum (Medium)
+given candidate set [2, 3, 6, 7] and target 7,
+A solution set is:
+[[7],[2, 2, 3]]
+
+解题思路：为避免子集重复，需要设置起始位置
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        dfs(candidates,target,ans,new ArrayList<Integer>(),0);
+        return ans;
+    }
+    public void dfs(int[] candidates, int target,List<List<Integer>> ans,List<Integer> list,int start){
+        if(target==0&&list.size()!=0){
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        if(target<0)
+            return;
+        for(int i = start;i<candidates.length;i++){
+            list.add(candidates[i]);
+            dfs(candidates,target-candidates[i],ans,list,i);
+            list.remove(list.size()-1);
+        }
+    }
+}
