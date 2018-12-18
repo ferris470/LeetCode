@@ -241,6 +241,8 @@
 
 [**257 输出二叉树中所有从根到叶子的路径**](https://github.com/ferris470/LeetCode/blob/master/257%20%E8%BE%93%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%89%80%E6%9C%89%E4%BB%8E%E6%A0%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E7%9A%84%E8%B7%AF%E5%BE%84)
 
+[**46 排列**](https://github.com/ferris470/LeetCode/blob/master/46%20%E6%8E%92%E5%88%97)
+
 [**47 含有相同元素求排列**](https://github.com/ferris470/LeetCode/blob/master/47%20%E5%90%AB%E6%9C%89%E7%9B%B8%E5%90%8C%E5%85%83%E7%B4%A0%E6%B1%82%E6%8E%92%E5%88%97)
 
 > 解决组合问题：
