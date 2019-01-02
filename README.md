@@ -276,3 +276,8 @@
 [**64 矩阵的最小路径和**](https://github.com/ferris470/LeetCode/blob/master/64%20%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C)
 
 [**62 矩阵的总路径数**](https://github.com/ferris470/LeetCode/blob/master/62%20%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%BB%E8%B7%AF%E5%BE%84%E6%95%B0)
+
+## 分割整数
+
+[**343 分割整数的最大乘积**](https://github.com/ferris470/LeetCode/blob/master/343%20%E5%88%86%E5%89%B2%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E4%B9%98%E7%A7%AF)
+
