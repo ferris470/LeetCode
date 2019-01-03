@@ -1,0 +1,22 @@
+646. Maximum Length of Pair Chain (Medium)
+Input: [[1,2], [2,3], [3,4]]
+Output: 2
+Explanation: The longest chain is [1,2] -> [3,4]
+题目描述：对于 (a, b) 和 (c, d) ，如果 b < c，则它们可以构成一条链。
+
+public int findLongestChain(int[][] pairs) {
+        int n = pairs.length;
+        Arrays.sort(pairs,(a,b)->(a[1]-b[1]));
+        int[] dp = new int[n];
+        Arrays.fill(dp,1);
+        for(int i = 1;i<n;i++){
+            for(int j = 0;j<i;j++){
+                if(pairs[i][0]>pairs[j][1])
+                    dp[i] = Math.max(dp[i],dp[j]+1);
+            }
+        }
+        int ans = 1;
+        for(int len:dp)
+            ans = Math.max(ans,len);
+        return ans;
+    }
