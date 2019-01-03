@@ -282,3 +282,5 @@
 [**343 分割整数的最大乘积**](https://github.com/ferris470/LeetCode/blob/master/343%20%E5%88%86%E5%89%B2%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E4%B9%98%E7%A7%AF)
 
 [**279 按平方数来分割整数**](https://github.com/ferris470/LeetCode/blob/master/279%20%E6%8C%89%E5%B9%B3%E6%96%B9%E6%95%B0%E6%9D%A5%E5%88%86%E5%89%B2%E6%95%B4%E6%95%B0)
+
+[**91 分割整数构成字母字符串**](https://github.com/ferris470/LeetCode/blob/master/91%20%E5%88%86%E5%89%B2%E6%95%B4%E6%95%B0%E6%9E%84%E6%88%90%E5%AD%97%E6%AF%8D%E5%AD%97%E7%AC%A6%E4%B8%B2)
