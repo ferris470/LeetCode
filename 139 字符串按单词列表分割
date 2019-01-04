@@ -1,0 +1,19 @@
+139. Word Break (Medium)
+s = "leetcode",
+dict = ["leet", "code"].
+Return true because "leetcode" can be segmented as "leet code".
+dict 中的单词没有使用次数的限制，因此这是一个完全背包问题。
+0-1 背包和完全背包在实现上的不同之处是，0-1 背包对物品的迭代是在最外层，而完全背包对物品的迭代是在最里层。
+
+public boolean wordBreak(String s, List<String> wordDict) {
+        boolean[] dp = new boolean[s.length()+1];
+        dp[0] = true;
+        for(int i = 1;i<=s.length();i++){
+            for(String word:wordDict){
+                int len = word.length();
+                if(len<=i&&s.substring(i-len,i).equals(word))
+                    dp[i] = dp[i]||dp[i-len];
+            }
+        }
+        return dp[s.length()];
+    }
