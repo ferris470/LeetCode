@@ -294,3 +294,5 @@
 [**376 最长摆动子序列**](https://github.com/ferris470/LeetCode/blob/master/376%20%E6%9C%80%E9%95%BF%E6%91%86%E5%8A%A8%E5%AD%90%E5%BA%8F%E5%88%97)
 
 [**416 划分数组为和相等的两部分**](https://github.com/ferris470/LeetCode/blob/master/416%20%E5%88%92%E5%88%86%E6%95%B0%E7%BB%84%E4%B8%BA%E5%92%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%A4%E9%83%A8%E5%88%86)
+
+[**494 改变一组数的正负号使得它们的和为一给定数**](https://github.com/ferris470/LeetCode/blob/master/494%20%E6%94%B9%E5%8F%98%E4%B8%80%E7%BB%84%E6%95%B0%E7%9A%84%E6%AD%A3%E8%B4%9F%E5%8F%B7%E4%BD%BF%E5%BE%97%E5%AE%83%E4%BB%AC%E7%9A%84%E5%92%8C%E4%B8%BA%E4%B8%80%E7%BB%99%E5%AE%9A%E6%95%B0)
