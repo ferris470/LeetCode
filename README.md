@@ -292,3 +292,5 @@
 [**646 一组整数对能够构成的最长链**](https://github.com/ferris470/LeetCode/blob/master/646%20%E4%B8%80%E7%BB%84%E6%95%B4%E6%95%B0%E5%AF%B9%E8%83%BD%E5%A4%9F%E6%9E%84%E6%88%90%E7%9A%84%E6%9C%80%E9%95%BF%E9%93%BE)
 
 [**376 最长摆动子序列**](https://github.com/ferris470/LeetCode/blob/master/376%20%E6%9C%80%E9%95%BF%E6%91%86%E5%8A%A8%E5%AD%90%E5%BA%8F%E5%88%97)
+
+[**416 划分数组为和相等的两部分**](https://github.com/ferris470/LeetCode/blob/master/416%20%E5%88%92%E5%88%86%E6%95%B0%E7%BB%84%E4%B8%BA%E5%92%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E4%B8%A4%E9%83%A8%E5%88%86)
