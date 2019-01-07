@@ -306,3 +306,7 @@
 [**322 找零钱的最少硬币数**](https://github.com/ferris470/LeetCode/blob/master/322%20%E6%89%BE%E9%9B%B6%E9%92%B1%E7%9A%84%E6%9C%80%E5%B0%91%E7%A1%AC%E5%B8%81%E6%95%B0)
 
 [**377 组合总和**](https://github.com/ferris470/LeetCode/blob/master/377%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C)
+
+## 股票交易问题
+[**188 只能进行 k 次的股票交易**](https://github.com/ferris470/LeetCode/blob/master/188%20%E5%8F%AA%E8%83%BD%E8%BF%9B%E8%A1%8C%20k%20%E6%AC%A1%E7%9A%84%E8%82%A1%E7%A5%A8%E4%BA%A4%E6%98%93)
+
