@@ -321,3 +321,5 @@
 [**234 回文链表**](https://github.com/ferris470/LeetCode/blob/master/234%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8)
 
 [**725 分隔链表**](https://github.com/ferris470/LeetCode/blob/master/725%20%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8)
+
+[**328 链表元素按奇偶聚集**](https://github.com/ferris470/LeetCode/blob/master/328%20%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0%E6%8C%89%E5%A5%87%E5%81%B6%E8%81%9A%E9%9B%86)
