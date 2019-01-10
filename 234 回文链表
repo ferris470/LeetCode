@@ -1,0 +1,39 @@
+234. Palindrome Linked List (Easy)
+题目要求：以 O(1) 的空间复杂度来求解。
+切成两半，把后半段反转，然后比较两半是否相等。
+
+public boolean isPalindrome(ListNode head) {
+        if(head==null||head.next==null)
+            return true;
+        int len = 0;
+        ListNode cur = head;
+        while(cur!=null){
+            len++;
+            cur = cur.next;
+        }
+        len = len/2;
+        ListNode half = head;
+        while(len-->0){
+            half = half.next;
+        }
+        half = reverse(half);
+        while(half!=null){
+            if(half.val!=head.val)
+                return false;
+            half = half.next;
+            head = head.next;
+        }
+        return true;
+    }
+    public ListNode reverse(ListNode root){
+        if(root==null||root.next==null)
+            return root;
+        ListNode pre = new ListNode(-1);
+        while(root!=null){
+            ListNode next = pre.next;
+            pre.next = root;
+            root = root.next;
+            pre.next.next = next;
+        }
+        return pre.next;
+    }
