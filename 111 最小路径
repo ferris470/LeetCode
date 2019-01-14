@@ -1,0 +1,15 @@
+111. Minimum Depth of Binary Tree (Easy)
+树的根节点到叶子节点的最小路径长度
+
+解题思路：注意和求最长路径的区别
+public int minDepth(TreeNode root) {
+        if(root==null)
+            return 0;
+        if(root.left==null&&root.right==null)
+            return 1;
+        if(root.left==null)
+            return 1+minDepth(root.right);
+        else if(root.right==null)
+            return 1+minDepth(root.left);
+        return 1+Math.min(minDepth(root.left),minDepth(root.right));
+    }
