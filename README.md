@@ -340,3 +340,5 @@
 [**687 相同节点值的最大路径长度**](https://github.com/ferris470/LeetCode/blob/master/687%20%E7%9B%B8%E5%90%8C%E8%8A%82%E7%82%B9%E5%80%BC%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E9%95%BF%E5%BA%A6)
 
 [**337 间隔遍历**](https://github.com/ferris470/LeetCode/blob/master/337%20%E9%97%B4%E9%9A%94%E9%81%8D%E5%8E%86)
+
+[**637 一棵树每层节点的平均数**](https://github.com/ferris470/LeetCode/blob/master/637%20%E4%B8%80%E6%A3%B5%E6%A0%91%E6%AF%8F%E5%B1%82%E8%8A%82%E7%82%B9%E7%9A%84%E5%B9%B3%E5%9D%87%E6%95%B0)
