@@ -1,0 +1,31 @@
+669. Trim a Binary Search Tree (Easy)
+Input:
+
+    3
+   / \
+  0   4
+   \
+    2
+   /
+  1
+
+  L = 1
+  R = 3
+
+Output:
+
+      3
+     /
+   2
+  /
+ 1
+题目描述：只保留值在 L ~ R 之间的节点
+
+public TreeNode trimBST(TreeNode root, int L, int R) {
+    if (root == null) return null;
+    if (root.val > R) return trimBST(root.left, L, R);
+    if (root.val < L) return trimBST(root.right, L, R);
+    root.left = trimBST(root.left, L, R);
+    root.right = trimBST(root.right, L, R);
+    return root;
+}
