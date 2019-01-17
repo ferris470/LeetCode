@@ -346,4 +346,13 @@
 
 [**513 得到左下角的节点**](https://github.com/ferris470/LeetCode/blob/master/513%20%E5%BE%97%E5%88%B0%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E8%8A%82%E7%82%B9)
 
+## BST
+二叉查找树（BST）：根节点大于等于左子树所有节点，小于等于右子树所有节点。
+
+二叉查找树中序遍历有序。
+
+[**669 修剪二叉查找树**](https://github.com/ferris470/LeetCode/blob/master/669%20%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91)
+
+[**235，236寻找普通树和二叉查找树的最近公共祖先**](https://github.com/ferris470/LeetCode/blob/master/235%EF%BC%8C236%E5%AF%BB%E6%89%BE%E6%99%AE%E9%80%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88)
+
 
