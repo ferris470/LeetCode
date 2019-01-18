@@ -359,4 +359,9 @@
 
 [**653. 树的两数之和**](https://github.com/ferris470/LeetCode/blob/master/653.%20%E6%A0%91%E7%9A%84%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C)
 
+[**501 寻找二叉查找树中出现次数最多的值**](https://github.com/ferris470/LeetCode/blob/master/501%20%E5%AF%BB%E6%89%BE%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E6%9C%80%E5%A4%9A%E7%9A%84%E5%80%BC)
+
+# 栈和队列
+[**232，252 栈和队列的转换**](https://github.com/ferris470/LeetCode/blob/master/232%EF%BC%8C252%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E8%BD%AC%E6%8D%A2)
+
 
