@@ -1,0 +1,42 @@
+题目：找到连续子序列的最大乘积
+
+解题思路1：用一个数组来保存含有当前遍历数字的最大乘积（当前位和之后数据的乘积），时间复杂度：O(N^2)
+public int maxProduct(int[] nums) {
+        int[] pro = new int[nums.length];
+        for(int i = 0;i<nums.length;i++){
+            int tempPro = nums[i],maxPro = nums[i];
+            if(tempPro==0){
+                pro[i] = 0;
+                continue;
+            }
+            for(int j = i+1;j<nums.length;j++){
+                tempPro*=nums[j];
+                maxPro = Math.max(maxPro,tempPro);
+            }
+            pro[i] = maxPro;
+        }
+        int ans = pro[0];
+        for(int i = 1;i<nums.length;i++)
+            ans = Math.max(ans,pro[i]);
+        return ans;
+    }
+    
+改进思路：在遍历的同时获取之前遍历过的数字的统计信息
+解题思路2：用imax和imin来保存包含当前遍历数组的最大乘积和最小乘积（当前位和之前数据的乘积），同时用r来记录最大的乘积（不一定包含当前数字），
+当正在遍历的数据为负数时，最大和最小值需要交换位置
+public int maxProduct(int[] nums) {
+        int r = nums[0],imax = nums[0],imin = nums[0];
+		for(int i = 1;i<nums.length;i++)
+		{
+			if(nums[i]<0)
+			{
+				int temp = imax;
+				imax = imin;
+				imin = temp;
+			}
+			imax = Math.max(nums[i],imax*nums[i]);
+			imin = Math.min(nums[i], imin*nums[i]);
+			r = Math.max(r, imax);
+		}
+		return r;
+    }
