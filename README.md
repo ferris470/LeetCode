@@ -21,6 +21,8 @@
 
 [**205 字符串同构**](https://github.com/ferris470/LeetCode/blob/master/205%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%8C%E6%9E%84)
 
+[**560 连续子数组和为k**](https://github.com/ferris470/LeetCode/blob/master/560%20%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C%E4%B8%BAk)
+
 # 2 字符串
 
 [**344 反转字符**](https://github.com/ferris470/LeetCode/blob/master/344%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6)
