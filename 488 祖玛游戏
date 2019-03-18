@@ -1,0 +1,53 @@
+Input: "WRRBBW", "RB"
+Output: -1
+Explanation: WRRBBW -> WRR[R]BBW -> WBBW -> WBB[B]W -> WW
+
+Input: "WWRRBBWW", "WRBRW"
+Output: 2
+Explanation: WWRRBBWW -> WWRR[R]BBWW -> WWBBWW -> WWBB[B]WW -> WWWW -> empty
+
+Input:"G", "GGGGG"
+Output: 2
+Explanation: G -> G[G] -> GG[G] -> empty 
+
+Input: "RBYYBBRRB", "YRBGB"
+Output: 3
+Explanation: RBYYBBRRB -> RBYY[Y]BBRRB -> RBBBRRB -> RRRB -> B -> B[B] -> BB[B] -> empty 
+
+解题思路：检查每个位置能不能添加元素，然后比较最小值，用回溯法
+public int findMinStep(String board, String hand) {
+        int[] h = new int[26];
+        for(char c:hand.toCharArray())
+            h[c-'A']++;
+        int rs = dfs(board+"#",h);
+        return rs==6?-1:rs;
+    }
+    public int dfs(String s,int[] h){
+        s = remove(s);
+        if(s.equals("#"))
+            return 0;
+        int rs = 6;
+        for(int i = 0,j = 0;j<s.length();j++){
+            if(s.charAt(i)==s.charAt(j))
+                continue;
+            int need = 3-(j-i);
+            if(h[s.charAt(i)-'A']>=need){
+                h[s.charAt(i)-'A']-=need;
+                rs = Math.min(rs,need+dfs(s.substring(0,i)+s.substring(j),h));
+                h[s.charAt(i)-'A']+=need;
+            }
+            i = j;
+        }
+        return rs;
+    }
+    public String remove(String s){
+        for(int i = 0,j = 0;j<s.length();j++){
+            if(s.charAt(i)==s.charAt(j))
+                continue;
+            if(j-i>=3)
+                return remove(s.substring(0,i)+s.substring(j));
+            else
+                i = j;
+        }
+        return s;
+    }
