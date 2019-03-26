@@ -372,4 +372,6 @@
 # 栈和队列
 [**232，252 栈和队列的转换**](https://github.com/ferris470/LeetCode/blob/master/232%EF%BC%8C252%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E8%BD%AC%E6%8D%A2)
 
+# 设计
+[**279 组成整数的最小平方数数量**](https://github.com/ferris470/LeetCode/blob/master/279%20%E7%BB%84%E6%88%90%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%B9%B3%E6%96%B9%E6%95%B0%E6%95%B0%E9%87%8F)
 
