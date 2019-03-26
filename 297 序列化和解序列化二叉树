@@ -1,0 +1,98 @@
+You may serialize the following tree:
+
+    1
+   / \
+  2   3
+     / \
+    4   5
+
+as "[1,2,3,null,null,4,5]"
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.deserialize(codec.serialize(root));
+
+递归解法：
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        transToString(root,sb);
+        return sb.toString();
+    }
+    public void transToString(TreeNode root,StringBuilder sb){
+        if(root==null)
+            sb.append("null,");
+        else{
+            sb.append(root.val+",");
+            transToString(root.left,sb);
+            transToString(root.right,sb);
+        }
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String[] nodes = data.split(",");
+        Deque<String> que = new LinkedList<>();
+        que.addAll(Arrays.asList(nodes));
+        return buildTree(que);
+    }
+    public TreeNode buildTree(Deque<String> que){
+        String cur = que.remove();
+        if(cur.equals("null"))
+            return null;
+        TreeNode node = new TreeNode(Integer.valueOf(cur));
+        node.left = buildTree(que);
+        node.right = buildTree(que);
+        return node;
+    }
+}
+
+非递归解法：
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        if(root==null)
+            return "";
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            TreeNode node = queue.poll();
+            if(node==null){
+                sb.append("null,");
+                continue;
+            }
+            sb.append(node.val+",");
+            queue.add(node.left);
+            queue.add(node.right);
+        }
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if (data == "") return null;
+        String[] nodes = data.split(",");
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root = new TreeNode(Integer.valueOf(nodes[0]));
+        queue.add(root);
+        for(int i = 1;i<nodes.length;i++){
+            TreeNode parent = queue.poll();
+            if(!nodes[i].equals("null")){
+                TreeNode left = new TreeNode(Integer.valueOf(nodes[i]));
+                parent.left = left;
+                queue.add(left);
+            }
+            i++;
+            if(!nodes[i].equals("null")){
+                TreeNode right = new TreeNode(Integer.valueOf(nodes[i]));
+                parent.right = right;
+                queue.add(right);
+            }
+        }
+        return root;
+    }
+}
