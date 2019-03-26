@@ -1,0 +1,56 @@
+insert(val): Inserts an item val to the collection.
+remove(val): Removes an item val from the collection if present.
+getRandom: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.
+
+解题思路：用HashMap和LinkedHashMap
+public class RandomizedCollection {
+	List<Integer> list;
+    HashMap<Integer,LinkedHashSet<Integer>> map;
+    /** Initialize your data structure here. */
+    public RandomizedCollection() {
+        list = new ArrayList<>();
+        map = new HashMap<>();
+    }
+    
+    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+    public boolean insert(int val) {
+        list.add(val);
+        boolean flag = false;
+        if(!map.containsKey(val)){
+        	flag = true;
+        	map.put(val, new LinkedHashSet<>());
+        }
+        LinkedHashSet toInsert = map.get(val);
+        toInsert.add(list.size()-1);
+        return flag;
+    }
+    
+    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+    public boolean remove(int val) {
+    	if(!map.containsKey(val))
+    		return false;
+    	LinkedHashSet<Integer> toDelete = map.get(val);
+    	int toDelIndex = toDelete.iterator().next();
+    	toDelete.remove(toDelIndex);
+    	if(toDelIndex!=list.size()-1){
+    		int lastNum = list.get(list.size()-1);
+    		LinkedHashSet<Integer> toReplace = map.get(lastNum);
+    		toReplace.remove(list.size()-1);
+    		toReplace.add(toDelIndex);
+    		map.put(lastNum, toReplace);
+    		list.set(toDelIndex, lastNum);
+    	}
+    	list.remove(list.size()-1);
+    	if(toDelete.size()==0)
+    		map.remove(val);
+    	else
+    		map.put(val, toDelete);
+        return true;
+    }
+    
+    /** Get a random element from the collection. */
+    public int getRandom() {
+        int index = (int)(Math.random() * list.size());
+        return list.get(index);
+    }
+}
