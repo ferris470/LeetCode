@@ -375,3 +375,4 @@
 # 设计
 [**297 序列化和解序列化二叉树**](https://github.com/ferris470/LeetCode/blob/master/297%20%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E8%A7%A3%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91)
 
+[**381 插入删除GetRandom O（1） - 允许重复**](https://github.com/ferris470/LeetCode/blob/master/381%20%E6%8F%92%E5%85%A5%E5%88%A0%E9%99%A4GetRandom%20O%EF%BC%881%EF%BC%89%20-%20%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D)
