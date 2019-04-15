@@ -1,0 +1,83 @@
+题目：给定字典序输出的字符串数组，按照字典序输出字母
+Example 1:
+
+Input:
+[
+  "wrt",
+  "wrf",
+  "er",
+  "ett",
+  "rftt"
+]
+
+Output: "wertf"
+Example 2:
+
+Input:
+[
+  "z",
+  "x"
+]
+
+Output: "zx"
+Example 3:
+
+Input:
+[
+  "z",
+  "x",
+  "z"
+] 
+
+Output: "" 
+
+Explanation: The order is invalid, so return "".
+
+解题思路：BFS
+class Solution {
+    public String alienOrder(String[] words) {
+        Map<Character,HashSet<Character>> graph = new HashMap<>();//记录每个字母后有几个字母
+        Map<Character,Integer> degree = new HashMap<>();//记录每个字母的前面有几个字母
+        for(String word:words){
+            for(char c:word.toCharArray()){
+                if(!graph.containsKey(c))
+                    graph.put(c,new HashSet<>());
+                if(!degree.containsKey(c))
+                    degree.put(c,0);
+            }
+        }
+        for(int i = 0;i<words.length-1;i++){
+            String word1 = words[i];
+            String word2 = words[i+1];
+            int len = Math.min(word1.length(),word2.length());
+            for(int j = 0;j<len;j++){
+                if(word1.charAt(j)==word2.charAt(j))
+                    continue;
+                char c1 = word1.charAt(j),c2 = word2.charAt(j);
+                if(graph.get(c1).add(c2))
+                    degree.put(c2,degree.get(c2)+1);
+                break;
+            }
+        }
+        Queue<Character> queue = new LinkedList<>();
+        for(char c:degree.keySet()){
+            if(degree.get(c)==0)
+                queue.add(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        while(!queue.isEmpty()){
+            char cur = queue.poll();
+            sb.append(cur);
+            HashSet<Character> set = graph.get(cur);
+            for(char next:set){
+                int nextdegree = degree.get(next)-1;
+                if(nextdegree==0)
+                    queue.add(next);
+                degree.put(next,nextdegree);
+            }
+        }
+        if(sb.length()!=degree.keySet().size())
+            return "";
+        return sb.toString();
+    }
+}
