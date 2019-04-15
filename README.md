@@ -228,6 +228,10 @@
 
 [**127 最短单词路径**](https://github.com/ferris470/LeetCode/blob/master/127%20%E6%9C%80%E7%9F%AD%E5%8D%95%E8%AF%8D%E8%B7%AF%E5%BE%84)
 
+
+[**269 外星字典**](https://github.com/ferris470/LeetCode/blob/master/269%20%E5%A4%96%E6%98%9F%E5%AD%97%E5%85%B8)
+
+
 ## DFS
 
 [**488 祖玛游戏**](https://github.com/ferris470/LeetCode/blob/master/488%20%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F)
